@@ -8,14 +8,15 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
+import iCold.model.dao.IColdFunction;
 import iCold.model.vo.ClothStoreM;
 
 
 public class ClothStoreV extends JFrame{
 	ClothStoreM Store = new ClothStoreM();
+	IColdFunction function = new IColdFunction();
 	private int i = 0;
 	public ClothStoreV() {
-		Store.openfile();
 		JFrame jframe = new JFrame("ClothStore");
 		jframe.setBounds(1000, 1000, 1000, 700);
 		jframe.setLayout(null);
@@ -40,10 +41,14 @@ public class ClothStoreV extends JFrame{
 		StoreButton.setLocation(400, 30);
 		StoreButton.setSize(150, 50);
 
-		JButton coinButton = new JButton(Store.getCoin()+" °³ ");
+		JButton coinButton = new JButton(function.coinDisplay()+" °³ ");
 		coinButton.setLocation(750, 30);
 		coinButton.setSize(150, 50);
 
+		JButton nickName = new JButton(function.nameDisplay());
+		nickName.setLocation(120, 550);
+		nickName.setSize(150, 50);
+		
 		ClothStoreM clotharr[] = new ClothStoreM[5];
 		clotharr[0] = new ClothStoreM("¿Ê1", 1);
 		clotharr[1] = new ClothStoreM("¿Ê2", 2);
@@ -118,12 +123,13 @@ public class ClothStoreV extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				Store.coin(clotharr[i].getPay());
-				coinButton.setText(Store.getCoin()+" °³");
+				function.subCoin(clotharr[i].getPay());
+				coinButton.setText(function.coinDisplay()+" °³");
 
 			}
 		});
 
+		jframe.add(nickName);
 		jframe.add(genderlabel);
 		jframe.add(ClothButton);
 		jframe.add(StoreButton);

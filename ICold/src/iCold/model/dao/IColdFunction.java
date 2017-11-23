@@ -11,6 +11,18 @@ public class IColdFunction {
 
 	public IColdFunction() {}
 
+	public String nameDisplay() {
+		String name = null;
+		try (BufferedReader br = new BufferedReader(new FileReader("Information.txt"))) {
+			name = br.readLine(); //information.txt의 첫번째 열의 정보를 name에 저장 
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return name;
+	}
+
 	public String coinDisplay() {
 		String coin = null;
 		try (BufferedReader br = new BufferedReader(new FileReader("Information.txt"))) {
@@ -39,11 +51,12 @@ public class IColdFunction {
 
 
 	public void addCoin(int num) {
+		String name = nameDisplay(); //파일 덮어쓰기 전 name정보를 백업하기 위해 name값 전달받음
 		int coin = Integer.parseInt(this.coinDisplay());
 		String coin2 = (coin+=num)+""; //coin값을 받아온 후 int로 변환, 인자값을 더해 다시 string으로 변환
 		String clothBackup = clothDisplay(); //파일 덮어쓰기 전 cloth정보를 백업하기 위해 cloth값 전달받음
 		try (BufferedWriter bw = new BufferedWriter(new FileWriter("information.txt"))) {
-			bw.write("민수");
+			bw.write(name);
 			bw.newLine();
 			bw.write(coin2);
 			bw.newLine();
@@ -59,11 +72,12 @@ public class IColdFunction {
 
 
 	public void subCoin(int num) {
+		String name = nameDisplay(); //파일 덮어쓰기 전 name정보를 백업하기 위해 name값 전달받음
 		int coin = Integer.parseInt(this.coinDisplay());
 		String coinAfterSub = (coin-=num)+"";//coin값을 받아온 후 int로 변환, 인자값을 뺀 후 다시 string으로 변환
 		String clothBackup = clothDisplay();//파일 덮어쓰기 전 cloth정보를 백업하기 위해 cloth값 전달받음
 		try (BufferedWriter bw = new BufferedWriter(new FileWriter("information.txt"))) {
-			bw.write("민수");
+			bw.write(name);
 			bw.newLine();
 			bw.write(coinAfterSub);
 			bw.newLine();
@@ -77,12 +91,13 @@ public class IColdFunction {
 	}
 	
 	public void addCloth(int num) {
+		String name = nameDisplay(); //파일 덮어쓰기 전 name정보를 백업하기 위해 name값 전달받음
 		String cloth = this.clothDisplay();
 		String cloth2 = cloth+num; //cloth값을 불러온 후 인자값을 문자열에 더함
 		String coinBackup = coinDisplay(); //파일 덮어쓰기 전 coin정보를 백업하기 위해 coin값 전달받음 
 		try (BufferedWriter bw = new BufferedWriter(new FileWriter("information.txt"))) {
 		
-			bw.write("민수");
+			bw.write(name);
 			bw.newLine();
 			bw.write(coinBackup);
 			bw.newLine();

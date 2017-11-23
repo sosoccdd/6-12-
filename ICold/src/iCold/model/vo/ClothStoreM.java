@@ -17,41 +17,41 @@ public class ClothStoreM {
 		this.list=list;
 		this.pay=pay;	
 	}
-	public void coin(int num){
-		
-		try(ObjectInputStream objIn = new ObjectInputStream(new FileInputStream("main.txt"))) {
-
-			int i = (int) objIn.readObject();			
-			System.out.println(i);
-			ObjectOutputStream objOut = new ObjectOutputStream(new FileOutputStream("main.txt"));
-			objOut.writeObject(i-num);
-			setCoin(i-num);
-			objOut.flush();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-	}
-
-
-	public void openfile(){
-		try(ObjectInputStream objIn = new ObjectInputStream(new FileInputStream("main.txt"))) {
-
-			int i = (int) objIn.readObject();
-			setCoin(i);
-			System.out.println(i);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	public void savefile(){
-		try (ObjectOutputStream objOut = new ObjectOutputStream(new FileOutputStream("main.txt"))){
-			objOut.writeObject(500);
-			objOut.flush();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+//	public void coin(int num){
+//		
+//		try(ObjectInputStream objIn = new ObjectInputStream(new FileInputStream("main.txt"))) {
+//
+//			int i = (int) objIn.readObject();			
+//			System.out.println(i);
+//			ObjectOutputStream objOut = new ObjectOutputStream(new FileOutputStream("main.txt"));
+//			objOut.writeObject(i-num);
+//			setCoin(i-num);
+//			objOut.flush();
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//		
+//	}
+//
+//
+//	public void openfile(){
+//		try(ObjectInputStream objIn = new ObjectInputStream(new FileInputStream("main.txt"))) {
+//
+//			int i = (int) objIn.readObject();
+//			setCoin(i);
+//			System.out.println(i);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//	}
+//	public void savefile(){
+//		try (ObjectOutputStream objOut = new ObjectOutputStream(new FileOutputStream("main.txt"))){
+//			objOut.writeObject(500);
+//			objOut.flush();
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//	}
 
 	public int getCoin() {
 		return coin;

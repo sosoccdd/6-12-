@@ -9,8 +9,12 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+import iCold.model.vo.SelectGenderM;
+
 public class SelectGenderV extends JFrame{
 
+	SelectGenderM select = new SelectGenderM();
+	
 	public SelectGenderV(){
 
 		JFrame jframe = new JFrame("SelectGender");
@@ -36,8 +40,8 @@ public class SelectGenderV extends JFrame{
 		checkButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				String text = nickText.getText();
-				System.out.println(text);
+				String name = nickText.getText();
+				select.selectName(name);
 				jframe.setVisible(false);
 				new ClothRoomV();
 			}

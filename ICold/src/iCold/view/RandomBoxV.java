@@ -25,7 +25,7 @@ public class RandomBoxV {
 		IColdFunction f = new IColdFunction();
 		
 		MainFrame(){
-			setSize(1000, 1000);
+			setBounds(1000, 1000, 1000, 700);
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			setResizable(true);
 			setVisible(true);
@@ -95,7 +95,7 @@ public class RandomBoxV {
 				
 				guessWhat = new JButton("guessWhat?");
 				guessWhat.setAlignmentX(Component.CENTER_ALIGNMENT);
-				guessWhat.setBounds(255,800,500,100);
+				guessWhat.setBounds(255,500,500,100);
 				add(guessWhat);
 				
 				guessWhat.addActionListener(new ActionListener(){
