@@ -68,7 +68,7 @@ public class ClothStoreV extends JFrame{
 		images[1] = new ImageIcon("image\\ø 2.png");
 		images[2] = new ImageIcon("image\\ø 3.png");
 		images[3] = new ImageIcon("image\\ø 4.png");
-		images[4] = new ImageIcon("image\\ø 5.png");
+		images[4] = new ImageIcon("image\\ø 5.jpg");
 
 		JLabel clothLabel = new JLabel("ø  ¿Ã∏ß : "+clotharr[0].getList()+"   ƒ⁄¿Œ : "+clotharr[0].getPay()+"∞≥");
 		clothLabel.setLocation(640, 350);
