@@ -94,7 +94,6 @@ public class RandomBoxV {
 					public void actionPerformed(ActionEvent e) {
 						setVisible(false);
 						new ClothRoomV();
-						
 					}
 					
 					
