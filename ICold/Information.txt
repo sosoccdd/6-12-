@@ -1,13 +1,3 @@
-<<<<<<< HEAD
+s
 
 20
-=======
-<<<<<<< HEAD
-haha
-23
-=======
-asdf
-8
->>>>>>> branch 'master' of https://github.com/sosoccdd/6-12-/
->>>>>>> branch 'master' of https://github.com/sosoccdd/6-12-/
-234

@@ -6,7 +6,6 @@ import iCold.view.SelectGenderV;
 public class IColdRun {
 	
 	public static void main(String[] args) {
-		new SelectGenderV();
-		
+		new SelectGenderV();	
 	}
 }

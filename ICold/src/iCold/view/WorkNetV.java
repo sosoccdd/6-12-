@@ -1,5 +1,7 @@
 package iCold.view;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -11,7 +13,11 @@ public class WorkNetV {
 	public WorkNetV(){
 		JFrame jframe = new JFrame("WorkNet");
 		jframe.setBounds(1000, 1000, 1000, 700);
-		jframe.getContentPane().setLayout(null);
+		jframe.setLayout(null);
+		Dimension frameSize = jframe.getSize();
+		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		jframe.setLocation((screenSize.width - frameSize.width)/2, (screenSize.height - frameSize.height)/2);
+
 		ImageIcon hambergerImage = new ImageIcon("image\\Hamberger.png");
 		JButton HambergerButton = new JButton(hambergerImage);
 		HambergerButton.setLocation(43, 471);
