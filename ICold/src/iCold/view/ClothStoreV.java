@@ -1,5 +1,7 @@
 package iCold.view;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -19,11 +21,16 @@ public class ClothStoreV extends JFrame{
 	public ClothStoreV() {
 		JFrame jframe = new JFrame("ClothStore");
 		jframe.setBounds(1000, 1000, 1000, 700);
-		jframe.setLayout(null);
+		jframe.getContentPane().setLayout(null);
+		Dimension frameSize = jframe.getSize();
+		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		jframe.setLocation((screenSize.width - frameSize.width)/2, (screenSize.height - frameSize.height)/2);
 
+		
+		
 		ImageIcon gender = new ImageIcon("image\\¿©ÀÚ.png");
 		JLabel genderlabel = new JLabel(gender);
-		genderlabel.setLocation(50, 100);
+		genderlabel.setLocation(-14, 68);
 		genderlabel.setSize(500, 500);
 
 		JButton ClothButton = new JButton("¿Ê Àå");
@@ -46,7 +53,7 @@ public class ClothStoreV extends JFrame{
 		coinButton.setSize(150, 50);
 
 		JButton nickName = new JButton(function.nameDisplay());
-		nickName.setLocation(120, 550);
+		nickName.setLocation(149, 520);
 		nickName.setSize(150, 50);
 		
 		ClothStoreM clotharr[] = new ClothStoreM[5];
@@ -129,16 +136,16 @@ public class ClothStoreV extends JFrame{
 			}
 		});
 
-		jframe.add(nickName);
-		jframe.add(genderlabel);
-		jframe.add(ClothButton);
-		jframe.add(StoreButton);
-		jframe.add(coinButton);
-		jframe.add(clothLabel);
-		jframe.add(clothImages);
-		jframe.add(before);
-		jframe.add(next);
-		jframe.add(shop);
+		jframe.getContentPane().add(nickName);
+		jframe.getContentPane().add(genderlabel);
+		jframe.getContentPane().add(ClothButton);
+		jframe.getContentPane().add(StoreButton);
+		jframe.getContentPane().add(coinButton);
+		jframe.getContentPane().add(clothLabel);
+		jframe.getContentPane().add(clothImages);
+		jframe.getContentPane().add(before);
+		jframe.getContentPane().add(next);
+		jframe.getContentPane().add(shop);
 
 		jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		jframe.setVisible(true);

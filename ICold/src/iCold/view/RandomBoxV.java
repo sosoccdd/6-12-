@@ -2,7 +2,9 @@ package iCold.view;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Dimension;
 import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
@@ -26,6 +28,10 @@ public class RandomBoxV {
 		
 		MainFrame(){
 			setBounds(1000, 1000, 1000, 700);
+			Dimension frameSize = getSize();
+			Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+			setLocation((screenSize.width - frameSize.width)/2, (screenSize.height - frameSize.height)/2);
+
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			setResizable(true);
 			setVisible(true);
