@@ -92,7 +92,8 @@ public class RandomBoxV {
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						System.exit(0);
+						setVisible(false);
+						new ClothRoomV();
 						
 					}
 					

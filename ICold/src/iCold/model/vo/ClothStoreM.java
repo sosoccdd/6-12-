@@ -10,12 +10,14 @@ public class ClothStoreM {
 	private int pay;
 	private int coin;
 	
+	
 	public ClothStoreM() {}
 	
 	public ClothStoreM(String list, int pay){
 		
 		this.list=list;
 		this.pay=pay;	
+		
 	}
 //	public void coin(int num){
 //		
