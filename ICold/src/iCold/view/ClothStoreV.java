@@ -4,6 +4,8 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.TreeSet;
 import java.util.concurrent.ForkJoinPool.ForkJoinWorkerThreadFactory;
 
 import javax.swing.ImageIcon;
@@ -14,6 +16,8 @@ import javax.swing.JLabel;
 import iCold.model.dao.IColdFunction;
 import iCold.model.vo.ClothStoreM;
 import java.awt.Font;
+import java.awt.List;
+
 import javax.swing.UIManager;
 
 
@@ -21,10 +25,12 @@ public class ClothStoreV extends JFrame{
 	ClothStoreM Store = new ClothStoreM();
 	IColdFunction function = new IColdFunction();
 	private int i = 0;
+	
 	public ClothStoreV() {
 		JFrame jframe = new JFrame("ClothStore");
 		jframe.setBounds(1000, 1000, 1000, 700);
 		jframe.getContentPane().setLayout(null);
+		
 		Dimension frameSize = jframe.getSize();
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		jframe.setLocation((screenSize.width - frameSize.width)/2, (screenSize.height - frameSize.height)/2);
@@ -76,7 +82,7 @@ public class ClothStoreV extends JFrame{
 		images[1] = new ImageIcon("image\\ø 2.png");
 		images[2] = new ImageIcon("image\\ø 3.png");
 		images[3] = new ImageIcon("image\\ø 4.png");
-		images[4] = new ImageIcon("image\\ø 5.jpg");
+		images[4] = new ImageIcon("image\\ø 5.png");
 
 		JLabel clothLabel = new JLabel("ø  ¿Ã∏ß : "+clotharr[0].getList()+"   ƒ⁄¿Œ : "+clotharr[0].getPay()+"∞≥");
 		clothLabel.setFont(new Font("±º∏≤", Font.BOLD, 20));
@@ -133,44 +139,56 @@ public class ClothStoreV extends JFrame{
 		});
 
 
-<<<<<<< HEAD
-		JButton shop = new JButton("±∏ ∏≈");
-		shop.setLocation(500, 540);
-		shop.setSize(400, 30);
-=======
+	
+
 		JButton shop = new JButton("±∏   ∏≈");
 		shop.setFont(new Font("±º∏≤", Font.BOLD, 20));
 		shop.setLocation(500, 552);
 		shop.setSize(400, 40);
->>>>>>> branch 'master' of https://github.com/sosoccdd/6-12-
+
 
 		shop.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-<<<<<<< HEAD
-				if(Integer.parseInt((function.coinDisplay()))<clotharr[i].getPay()) {
-					jframe.getContentPane();
+
+				char cr[] = new char[function.clothDisplay().toCharArray().length];
+				ArrayList ar = new ArrayList();
+				
+				
+				cr = function.clothDisplay().toCharArray();
+				
+				for (int i = 0; i < cr.length; i++) {
+					ar.add(i, cr[i]);
 				}
+					
+				
+				
+				if(Integer.parseInt((function.coinDisplay()))<clotharr[i].getPay()) {
+					jframe.setVisible(false);
+					jframe.getContentPane();
+					jframe.setVisible(true);
+				}
+				
+				else if(i>0 && !(ar.contains(clotharr[i-1].getCloth()))) {
+					jframe.setVisible(false);
+					jframe.getContentPane();
+					jframe.setVisible(true);
+				}
+				
+				
+				else if(ar.contains(clotharr[i].getCloth())) {
+					jframe.setVisible(false);
+					jframe.getContentPane();
+					jframe.setVisible(true);
+				}
+				
 				else {
 				function.subCoin(clotharr[i].getPay());
 				coinButton.setText(function.coinDisplay()+" ∞≥");
+				function.addCloth(""+clotharr[i].getPay());
 				}
-=======
 
-				if(function.clothDisplay().charAt(i) == clotharr[i].getCloth()){
-
-				}else{
-
-					function.subCoin(clotharr[i].getPay());
-					coinButton.setText(function.coinDisplay()+" ∞≥");
-					function.addCloth(String.valueOf(clotharr[i].getCloth()));
-				}
-				System.out.println("ø "+function.clothDisplay());
-
-
-
->>>>>>> branch 'master' of https://github.com/sosoccdd/6-12-
 			}
 		});
 

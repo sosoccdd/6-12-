@@ -10,7 +10,7 @@ import java.io.FileWriter;
 public class IColdFunction {
 
 	public IColdFunction() {}
-
+	
 	public String nameDisplay() {
 		String name = null;
 		try (BufferedReader br = new BufferedReader(new FileReader("Information.txt"))) {
@@ -112,3 +112,4 @@ public class IColdFunction {
 
 
 }
+
