@@ -122,7 +122,7 @@ public class ClothStoreV extends JFrame{
 		});
 
 
-		JButton shop = new JButton("확 인");
+		JButton shop = new JButton("구 매");
 		shop.setLocation(500, 540);
 		shop.setSize(400, 30);
 
@@ -130,9 +130,13 @@ public class ClothStoreV extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
+				if(Integer.parseInt((function.coinDisplay()))<clotharr[i].getPay()) {
+					jframe.getContentPane();
+				}
+				else {
 				function.subCoin(clotharr[i].getPay());
 				coinButton.setText(function.coinDisplay()+" 개");
-
+				}
 			}
 		});
 
