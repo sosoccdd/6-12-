@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -51,10 +52,18 @@ public class ClothRoomV {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-
-				jframe.setVisible(false);
-				new EndingStroyV();
-
+				char cr[] = new char[5];
+				ArrayList ar = new ArrayList();
+			    
+				cr = function.clothDisplay().toCharArray();
+				
+				for (int j = 0; j < cr.length; j++) {
+					if(cr[j]!='0')
+					ar.add(cr[j], j);
+				}
+				
+				
+			
 			}
 			
 		});

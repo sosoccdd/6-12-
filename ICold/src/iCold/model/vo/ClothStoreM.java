@@ -5,7 +5,7 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-public class ClothStoreM {
+public class ClothStoreM{
 	private String list;
 	private int pay;
 	private int coin;
