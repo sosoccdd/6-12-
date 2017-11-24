@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-haha
-23
-=======
-asdf
-8
->>>>>>> branch 'master' of https://github.com/sosoccdd/6-12-/
-234
+d
+123
+12345
