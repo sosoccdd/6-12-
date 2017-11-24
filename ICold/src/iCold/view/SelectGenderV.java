@@ -52,7 +52,7 @@ public class SelectGenderV extends JFrame{
 				String name = nickText.getText();
 				select.selectName(name);
 				jframe.setVisible(false);
-				new ClothRoomV();
+				new StartStoryV();
 			}
 		});
 

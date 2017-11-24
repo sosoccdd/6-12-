@@ -15,10 +15,23 @@ public class WorkNetV {
 	public WorkNetV(){
 		JFrame jframe = new JFrame("WorkNet");
 		jframe.setBounds(1000, 1000, 1000, 700);
-		jframe.setLayout(null);
+		jframe.getContentPane().setLayout(null);
 		Dimension frameSize = jframe.getSize();
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		jframe.setLocation((screenSize.width - frameSize.width)/2, (screenSize.height - frameSize.height)/2);
+		
+		
+		JButton ClothButton = new JButton("¿Ê Àå");
+		ClothButton.setFont(new Font("±¼¸²", Font.BOLD, 20));
+		ClothButton.setLocation(43, 12);
+		ClothButton.setSize(150, 50);
+		ClothButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				jframe.setVisible(false);
+				new ClothRoomV();
+			}
+		});
 		
 		JButton workButton = new JButton("°í¿ë³ëµ¿ºÎ");
 		workButton.setFont(new Font("±¼¸²", Font.BOLD, 20));
@@ -87,6 +100,9 @@ public class WorkNetV {
 			
 		});
 
+		
+		
+		jframe.getContentPane().add(ClothButton);
 		jframe.getContentPane().add(workButton);
 		jframe.getContentPane().add(FoodFighterButton);
 		jframe.getContentPane().add(GasOilButton);
