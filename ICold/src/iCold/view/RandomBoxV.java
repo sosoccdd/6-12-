@@ -129,11 +129,8 @@ public class RandomBoxV {
 						
 						else if(num<85) {
 							F.getCardLayout().show(F.getContentPane(), "two");
-<<<<<<< HEAD
-							i.addCloth(5);
-=======
+
 							i.addCloth("10");
->>>>>>> branch 'master' of https://github.com/sosoccdd/6-12-
 						}
 						}
 					}
