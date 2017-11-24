@@ -1,6 +1,7 @@
 package iCold.view;
 
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -21,7 +22,7 @@ public class SelectGenderV extends JFrame{
 
 		JFrame jframe = new JFrame("SelectGender");
 		jframe.setBounds(1000, 1000, 1000, 700);
-		jframe.setLayout(null);
+		jframe.getContentPane().setLayout(null);
 		Dimension frameSize = jframe.getSize();
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		jframe.setLocation((screenSize.width - frameSize.width)/2, (screenSize.height - frameSize.height)/2);
@@ -32,14 +33,17 @@ public class SelectGenderV extends JFrame{
 		genderlabel.setSize(500, 500);
 
 		JLabel nickLabel = new JLabel("´Ð³×ÀÓ");
-		nickLabel.setLocation(393, 500);
-		nickLabel.setSize(100, 30);
+		nickLabel.setFont(new Font("±¼¸²", Font.BOLD, 20));
+		nickLabel.setLocation(371, 500);
+		nickLabel.setSize(110, 30);
 
 		JTextField nickText = new JTextField(10);
-		nickText.setLocation(450, 500);
-		nickText.setSize(100, 30);
+		nickText.setFont(new Font("±¼¸²", Font.BOLD, 20));
+		nickText.setLocation(440, 500);
+		nickText.setSize(120, 30);
 		
 		JButton checkButton = new JButton("È®  ÀÎ");
+		checkButton.setFont(new Font("±¼¸²", Font.BOLD, 20));
 		checkButton.setLocation(393, 542);
 		checkButton.setSize(150, 50);
 		checkButton.addActionListener(new ActionListener() {
@@ -52,10 +56,10 @@ public class SelectGenderV extends JFrame{
 			}
 		});
 
-		jframe.add(genderlabel);
-		jframe.add(nickLabel);
-		jframe.add(nickText);
-		jframe.add(checkButton);
+		jframe.getContentPane().add(genderlabel);
+		jframe.getContentPane().add(nickLabel);
+		jframe.getContentPane().add(nickText);
+		jframe.getContentPane().add(checkButton);
 
 
 		jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

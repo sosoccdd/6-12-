@@ -1,5 +1,9 @@
 package iCold.view;
 
+
+import java.awt.Font;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -11,7 +15,17 @@ public class WorkNetV {
 	public WorkNetV(){
 		JFrame jframe = new JFrame("WorkNet");
 		jframe.setBounds(1000, 1000, 1000, 700);
-		jframe.getContentPane().setLayout(null);
+		jframe.setLayout(null);
+		Dimension frameSize = jframe.getSize();
+		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		jframe.setLocation((screenSize.width - frameSize.width)/2, (screenSize.height - frameSize.height)/2);
+		
+		JButton workButton = new JButton("고용노동부");
+		workButton.setFont(new Font("굴림", Font.BOLD, 20));
+		workButton.setLocation(393, 12);
+		workButton.setSize(150, 50);
+		
+
 		ImageIcon hambergerImage = new ImageIcon("image\\Hamberger.png");
 		JButton HambergerButton = new JButton(hambergerImage);
 		HambergerButton.setLocation(43, 471);
@@ -72,7 +86,8 @@ public class WorkNetV {
 			}
 			
 		});
-		
+
+		jframe.getContentPane().add(workButton);
 		jframe.getContentPane().add(FoodFighterButton);
 		jframe.getContentPane().add(GasOilButton);
 		jframe.getContentPane().add(CrushCarButton);

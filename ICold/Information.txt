@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 123
 0
 01
+=======
+ll
+1231
+12345
+>>>>>>> branch 'master' of https://github.com/sosoccdd/6-12-
