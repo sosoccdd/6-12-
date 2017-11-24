@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 d
 123
 12345
+=======
+s
+
+20
+>>>>>>> branch 'master' of https://github.com/sosoccdd/6-12-/
