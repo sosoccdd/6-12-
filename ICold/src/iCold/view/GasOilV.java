@@ -22,7 +22,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.plaf.LabelUI;
 
-
 public class GasOilV extends JFrame implements Runnable{
 	int count = 0;
 	int coincount = 0;

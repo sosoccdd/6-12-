@@ -15,7 +15,6 @@ import javax.swing.JPanel;
 import gasOilM.GasOilT;*/
 import iCold.view.GasOilV;
 
-
 public class GasOilM extends GasOilV implements Runnable{
 
 	int won;
