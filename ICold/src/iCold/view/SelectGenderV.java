@@ -26,7 +26,7 @@ public class SelectGenderV extends JFrame{
 		Dimension frameSize = jframe.getSize();
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		jframe.setLocation((screenSize.width - frameSize.width)/2, (screenSize.height - frameSize.height)/2);
-
+		
 		ImageIcon gender = new ImageIcon("image\\¿©ÀÚ.png");
 		JLabel genderlabel = new JLabel(gender);
 		genderlabel.setLocation(224, 30);
