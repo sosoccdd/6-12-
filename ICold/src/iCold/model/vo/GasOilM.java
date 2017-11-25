@@ -20,7 +20,7 @@ public class GasOilM extends GasOilV implements Runnable{
 
 	int won;
 	JFrame sf = new JFrame();
-
+	
 	public GasOilM(){
 		
 /*		GasOilM gasm = new GasOilM();
