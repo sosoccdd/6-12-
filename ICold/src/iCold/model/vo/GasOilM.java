@@ -1,6 +1,8 @@
 package iCold.model.vo;
 
+import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
@@ -14,6 +16,7 @@ import javax.swing.JPanel;
 /*import gasOilM.GasOilM;
 import gasOilM.GasOilT;*/
 import iCold.view.GasOilV;
+import iCold.view.WorkNetV;
 
 public class GasOilM extends GasOilV implements Runnable{
 
@@ -51,8 +54,11 @@ public class GasOilM extends GasOilV implements Runnable{
 				if(i==100){
 					JFrame sf = new JFrame();
 					sf.setTitle("시간 종료");
-					sf.setBounds(300, 300, 500, 500);
+					sf.setBounds(1000, 1000, 1000, 700);
 					sf.setLayout(null);
+					Dimension frameSize = sf.getSize();
+					Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+					sf.setLocation((screenSize.width - frameSize.width)/2, (screenSize.height - frameSize.height)/2);
 
 					int sum = 0;
 
@@ -76,6 +82,7 @@ public class GasOilM extends GasOilV implements Runnable{
 							// txt파일에 저장
 							//gasm.stopOilM();
 							sf.setVisible(false);
+							new WorkNetV();
 
 						}
 					});

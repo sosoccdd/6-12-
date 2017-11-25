@@ -1,8 +1,10 @@
 package iCold.view;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
@@ -49,27 +51,30 @@ public class GasOilV extends JFrame implements Runnable{
 	
 	public void gasOilPlay(){
 		
-		jr.setBounds(200, 300, 1000, 800);
+		jr.setBounds(1000, 1000, 1000, 700);
 		jr.setLayout(null);
+		Dimension frameSize = jr.getSize();
+		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		jr.setLocation((screenSize.width - frameSize.width)/2, (screenSize.height - frameSize.height)/2);
 
-		ImageIcon oilimage = new ImageIcon("images\\oil.png");
+		ImageIcon oilimage = new ImageIcon("image\\oil.png");
 		//ImageIcon back = new ImageIcon("images\\back.jpg");
-		ImageIcon al = new ImageIcon("images\\default.png");
-		ImageIcon son1 = new ImageIcon("images\\son1.png");
-		ImageIcon son2 = new ImageIcon("images\\son2.png");
-		ImageIcon oil_e = new ImageIcon("images\\oil_e.png");
-		ImageIcon money = new ImageIcon("images\\money.png");
-		ImageIcon son1_mo = new ImageIcon("images\\son1_money.png");
-		ImageIcon son2_mo = new ImageIcon("images\\son2_money.png");
-		ImageIcon alget = new ImageIcon("images\\money_get.png");
+		ImageIcon al = new ImageIcon("image\\default.png");
+		ImageIcon son1 = new ImageIcon("image\\son1.png");
+		ImageIcon son2 = new ImageIcon("image\\son2.png");
+		ImageIcon oil_e = new ImageIcon("image\\oil_e.png");
+		ImageIcon money = new ImageIcon("image\\money.png");
+		ImageIcon son1_mo = new ImageIcon("image\\son1_money.png");
+		ImageIcon son2_mo = new ImageIcon("image\\son2_money.png");
+		ImageIcon alget = new ImageIcon("image\\money_get.png");
 		//ImageIcon  = new ImageIcon("images\\money.jpg");
 		ImageIcon  oil[] = new ImageIcon[4];
-		oil[0] = new ImageIcon("images\\oil_1.png");
-		oil[1] = new ImageIcon("images\\oil_2.png");
-		oil[2] = new ImageIcon("images\\oil_3.png");
-		oil[3] = new ImageIcon("images\\oil_f.png");
+		oil[0] = new ImageIcon("image\\oil_1.png");
+		oil[1] = new ImageIcon("image\\oil_2.png");
+		oil[2] = new ImageIcon("image\\oil_3.png");
+		oil[3] = new ImageIcon("image\\oil_f.png");
 
-		ImageIcon coin = new ImageIcon("images\\coin1.png");
+		ImageIcon coin = new ImageIcon("image\\coin1.png");
 
 		JPanel oilpanel = new JPanel();
 		JLabel oillabel = new JLabel(oilimage);
