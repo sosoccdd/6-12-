@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+kk
+51
+=======
 FFF
+<<<<<<< HEAD
 39
+=======
+42
+>>>>>>> branch 'master' of https://github.com/sosoccdd/6-12-/
+>>>>>>> branch 'master' of https://github.com/sosoccdd/6-12-.git/
 0612345

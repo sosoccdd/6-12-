@@ -6,6 +6,8 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -53,8 +55,8 @@ public class WorkNetV {
 
 		ImageIcon hambergerImage = new ImageIcon("image\\Hamberger.png");
 		JButton HambergerButton = new JButton(hambergerImage);
-		HambergerButton.setLocation(43, 471);
-		HambergerButton.setSize(203, 147);
+		HambergerButton.setLocation(12, 492);
+		HambergerButton.setSize(181, 126);
 		HambergerButton.addActionListener(new ActionListener() {
 
 			@Override
@@ -68,8 +70,8 @@ public class WorkNetV {
 		});
 		ImageIcon CrushCarImage = new ImageIcon("image\\CrushCar.png");
 		JButton CrushCarButton = new JButton(CrushCarImage);
-		CrushCarButton.setLocation(736, 471);
-		CrushCarButton.setSize(203, 147);
+		CrushCarButton.setLocation(594, 492);
+		CrushCarButton.setSize(181, 126);
 		CrushCarButton.addActionListener(new ActionListener() {
 
 			@Override
@@ -83,31 +85,29 @@ public class WorkNetV {
 		});
 		ImageIcon GasOilImage = new ImageIcon("image\\GasOil.png");
 		JButton GasOilButton = new JButton(GasOilImage);
-		GasOilButton.setLocation(505, 471);
-		GasOilButton.setSize(203, 147);
+		GasOilButton.setLocation(398, 492);
+		GasOilButton.setSize(181, 126);
 		GasOilButton.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				
-				
+			
 				jframe.setVisible(false);
-				System.out.println("123124rqwdasfasdfjnsjdgndsjgn");
 				GasOilV.GasOilM2 gasv = gasm.new GasOilM2();
 				Thread t1 = new Thread(gasv);
-				
 				t1.start();
 				
 				
 			}
+				
 		});
 		
 		
 		
 		ImageIcon FoodFighterImage = new ImageIcon("image\\FoodFighter.png");
 		JButton FoodFighterButton = new JButton(FoodFighterImage);
-		FoodFighterButton.setLocation(274, 471);
-		FoodFighterButton.setSize(203, 147);
+		FoodFighterButton.setLocation(205, 492);
+		FoodFighterButton.setSize(181, 126);
 		FoodFighterButton.addActionListener(new ActionListener() {
 
 			@Override
@@ -115,6 +115,19 @@ public class WorkNetV {
 
 				jframe.setVisible(false);
 				new FoodFighterV();
+
+			}
+
+		});
+		ImageIcon Bungeoppang = new ImageIcon("image\\Bungeoppang.png");
+		JButton BungeoppangButton = new JButton(Bungeoppang);
+		BungeoppangButton.setLocation(787, 492);
+		BungeoppangButton.setSize(185, 126);
+		BungeoppangButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				jframe.setVisible(false);
+				new BungeoppangV();
 
 			}
 
@@ -129,6 +142,7 @@ public class WorkNetV {
 		jframe.getContentPane().add(GasOilButton);
 		jframe.getContentPane().add(CrushCarButton);
 		jframe.getContentPane().add(HambergerButton);
+		jframe.getContentPane().add(BungeoppangButton);
 
 		jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		jframe.setVisible(true);
