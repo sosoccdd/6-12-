@@ -1,10 +1,14 @@
 package iCold.view;
 
 import java.awt.Color;
+import java.awt.Dialog;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
@@ -29,28 +33,33 @@ public class GasOilV extends JFrame implements Runnable{
 	int coincount = 0;
 	JFrame jr = new JFrame("주유소 게임");
 
+	boolean result = true;
+
 	public GasOilV(){}
 
 	//GasOil 스레드
-	@Override
+	/*@Override
 	public void run() {
+
 		this.gasOilPlay();
-		
-		
+
 	}
-	
+	 */
 	public void stopOilM(){
 		jr.setVisible(false);
+		System.out.println("주유소 종료");
+
 	}
-	
-	
+
+
 	public int getCoincount(){
 		return coincount;
 	}
-	
-	
-	public void gasOilPlay(){
-		
+
+	@Override
+	public void run(){
+		System.out.println("주유소 시작");
+		//jr.setVisible(true);
 		jr.setBounds(1000, 1000, 1000, 700);
 		jr.setLayout(null);
 		Dimension frameSize = jr.getSize();
@@ -203,19 +212,134 @@ public class GasOilV extends JFrame implements Runnable{
 				}
 			});	
 
-		}while(coincount>300);
-		
-		//jr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		}while(coincount>=300);
+
+		jr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		jr.setVisible(true);
-		
-		System.out.println("주유소 종료");
-	
-		
+
 	}
 
 
+	class GasOilM2 extends GasOilV implements Runnable{
 
+
+
+
+		@Override
+		public void run(){
+
+			//jr.setVisible(true);
+//			JFrame sf = new JFrame();
+			//jr.setBounds(1000, 1000, 1000, 700);
+			//jr.setVisible(true);
+			//jr.pack();
+
+			Thread t2 = new Thread(new GasOilV());
+			t2.setDaemon(true);
+			t2.setPriority(10);
+			t2.start();
+
+			//JPanel expanel = new JPanel();
+			Dialog sd = new Dialog(jr, "게임 시간 종료");
+			sd.setBounds(500, 500, 500, 700);
+			sd.setLayout(new FlowLayout());
+			sd.add(new JLabel("획득 코인"));
+			sd.add(new JLabel("전체 코인"));
+			
+			JButton button2 = new JButton("돌아가기");
+			sd.add(button2);
+
+			try {
+				for(int i = 0; i<=100; i++){
+					System.out.println(i);
+					Thread.sleep(100);
+					if(i==100){
+						//jr.setVisible(false);
+						sd.setVisible(true);
+												
+						button2.addActionListener(new ActionListener() {
+							@Override
+							public void actionPerformed(ActionEvent e) {
+								
+								sd.setVisible(false);
+								//jr.dispose();
+								System.out.println("마이아");
+								jr.setVisible(false);
+								new WorkNetV();
+							}
+						});
+					/*	if(!sd.isActive()){
+							jr.setVisible(false);
+							System.out.println("wkdmkmsdkmx");
+						}*/
+					}
+					
+					
+				}
+
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			
+
+		}
+		
+		
+	
+	}
+	
+	
+	
 }
+
+
+
+/*						jr.setVisible(false);
+	System.out.println("V종료");
+
+
+
+	sf.setTitle("시간 종료");
+	sf.setBounds(1000, 1000, 1000, 700);
+	sf.setLayout(null);
+	Dimension frameSize = sf.getSize();
+	Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+	sf.setLocation((screenSize.width - frameSize.width)/2, (screenSize.height - frameSize.height)/2);
+
+	int sum = 0;
+
+	JLabel slabel = new JLabel("획득 : " + "2222" + " 원");
+	slabel.setSize(100, 100);
+	slabel.setLocation(100, 50);
+	JLabel dlabel = new JLabel("합계 : " + sum + " 원");
+	dlabel.setSize(100, 100);
+	dlabel.setLocation(100, 150);		
+	JButton fbutton = new JButton("돌아가기");
+	fbutton.setSize(70, 70);
+	fbutton.setLocation(100, 350);
+
+	sf.add(slabel);
+	sf.add(dlabel);
+	sf.add(fbutton);
+
+	fbutton.addActionListener(new ActionListener() {			
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// txt파일에 저장
+			result = false;
+
+			System.out.println("123123213213");
+			//jr.dispose();
+			jr.setVisible(false);
+			sf.setVisible(false);
+			new WorkNetV();
+
+		}
+	});
+
+	sf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	sf.setVisible(true);
+}*/
 
 
 
