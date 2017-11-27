@@ -153,6 +153,10 @@ public class ClothStoreV extends JFrame{
 			public void actionPerformed(ActionEvent arg0) {
 
 				char cr[] = new char[function.clothDisplay().toCharArray().length];
+<<<<<<< HEAD
+=======
+				System.out.println(cr.length);
+>>>>>>> branch 'master' of https://github.com/sosoccdd/6-12-
 				ArrayList ar = new ArrayList();
 				
 				
