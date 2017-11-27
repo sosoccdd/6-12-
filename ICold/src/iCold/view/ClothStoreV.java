@@ -82,7 +82,7 @@ public class ClothStoreV extends JFrame{
 		images[1] = new ImageIcon("image\\ø 2.png");
 		images[2] = new ImageIcon("image\\ø 3.png");
 		images[3] = new ImageIcon("image\\ø 4.png");
-		images[4] = new ImageIcon("image\\ø 5.jpg");
+		images[4] = new ImageIcon("image\\ø 5.png");
 
 		JLabel clothLabel = new JLabel("ø  ¿Ã∏ß : "+clotharr[0].getList()+"   ƒ⁄¿Œ : "+clotharr[0].getPay()+"∞≥");
 		clothLabel.setFont(new Font("±º∏≤", Font.BOLD, 20));
@@ -153,6 +153,7 @@ public class ClothStoreV extends JFrame{
 			public void actionPerformed(ActionEvent arg0) {
 
 				char cr[] = new char[function.clothDisplay().toCharArray().length];
+
 				System.out.println(cr.length);
 				ArrayList ar = new ArrayList();
 				
