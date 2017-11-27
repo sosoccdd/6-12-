@@ -91,70 +91,15 @@ public class WorkNetV {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				
-<<<<<<< HEAD
-				try {
-					for(int i = 0; i<=100; i++){
-						System.out.println(i);
-						Thread.sleep(100);
-						if(i==100){
-							JFrame sf = new JFrame();
-							sf.setTitle("시간 종료");
-							sf.setBounds(300, 300, 500, 500);
-							sf.getContentPane().setLayout(null);
-
-							int sum = 0;
-
-							JLabel slabel = new JLabel("획득 : " + "2222" + " 원");
-							slabel.setSize(100, 100);
-							slabel.setLocation(100, 50);
-							JLabel dlabel = new JLabel("합계 : " + sum + " 원");
-							dlabel.setSize(100, 100);
-							dlabel.setLocation(100, 150);      
-							JButton fbutton = new JButton("돌아가기");
-							fbutton.setSize(70, 70);
-							fbutton.setLocation(100, 350);
-
-							sf.getContentPane().add(slabel);
-							sf.getContentPane().add(dlabel);
-							sf.getContentPane().add(fbutton);
-
-							fbutton.addActionListener(new ActionListener() {         
-								@Override
-								public void actionPerformed(ActionEvent e) {
-									// txt파일에 저장
-									//gasm.stopOilM();
-									sf.setVisible(false);
-									new WorkNetV();
-
-								}
-							});
-
-							sf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-							sf.setVisible(true);
-						}
-					}
-
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-
-
-				if(!t2.isAlive()){
-					gasm.stopOilM();
-				}
-=======
-				
+			
 				jframe.setVisible(false);
-				System.out.println("123124rqwdasfasdfjnsjdgndsjgn");
 				GasOilV.GasOilM2 gasv = gasm.new GasOilM2();
 				Thread t1 = new Thread(gasv);
-				
 				t1.start();
 				
->>>>>>> branch 'master' of https://github.com/sosoccdd/6-12-/
 				
 			}
+				
 		});
 		
 		
