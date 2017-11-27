@@ -102,7 +102,7 @@ public class WorkNetV {
 				
 		});
 		
-		
+	
 		
 		ImageIcon FoodFighterImage = new ImageIcon("image\\FoodFighter.png");
 		JButton FoodFighterButton = new JButton(FoodFighterImage);
