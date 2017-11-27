@@ -12,9 +12,13 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
+
 import iCold.model.vo.GasOilM;
+import iCold.model.vo.GasOilStart;
+import iCold.view.*;
 
 public class WorkNetV {
+	GasOilV gasm = new GasOilV();
 	public WorkNetV(){
 		JFrame jframe = new JFrame("WorkNet");
 		jframe.setBounds(1000, 1000, 1000, 700);
@@ -22,7 +26,12 @@ public class WorkNetV {
 		Dimension frameSize = jframe.getSize();
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		jframe.setLocation((screenSize.width - frameSize.width)/2, (screenSize.height - frameSize.height)/2);
-
+		
+		if(gasm.jr.isVisible()){
+			gasm.stopOilM();
+		}
+		
+		
 
 		JButton ClothButton = new JButton("옷 장");
 		ClothButton.setFont(new Font("굴림", Font.BOLD, 20));
@@ -80,71 +89,21 @@ public class WorkNetV {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-
-				jframe.setVisible(false);
-				GasOilV gasm = new GasOilV();
-//				Thread t1 = new Thread(new GasOilM());
-				Thread t2 = new Thread(gasm);
-
-				t2.setDaemon(true);
-//				t1.start();
-				t2.start();
-
 				
-				try {
-					for(int i = 0; i<=100; i++){
-						System.out.println(i);
-						Thread.sleep(100);
-						if(i==100){
-							JFrame sf = new JFrame();
-							sf.setTitle("시간 종료");
-							sf.setBounds(300, 300, 500, 500);
-							sf.setLayout(null);
-
-							int sum = 0;
-
-							JLabel slabel = new JLabel("획득 : " + "2222" + " 원");
-							slabel.setSize(100, 100);
-							slabel.setLocation(100, 50);
-							JLabel dlabel = new JLabel("합계 : " + sum + " 원");
-							dlabel.setSize(100, 100);
-							dlabel.setLocation(100, 150);      
-							JButton fbutton = new JButton("돌아가기");
-							fbutton.setSize(70, 70);
-							fbutton.setLocation(100, 350);
-
-							sf.add(slabel);
-							sf.add(dlabel);
-							sf.add(fbutton);
-
-							fbutton.addActionListener(new ActionListener() {         
-								@Override
-								public void actionPerformed(ActionEvent e) {
-									// txt파일에 저장
-									//gasm.stopOilM();
-									sf.setVisible(false);
-									new WorkNetV();
-
-								}
-							});
-
-							sf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-							sf.setVisible(true);
-						}
-					}
-
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-
-
-				if(!t2.isAlive()){
-					gasm.stopOilM();
-				}
+				
+				jframe.setVisible(false);
+				System.out.println("123124rqwdasfasdfjnsjdgndsjgn");
+				GasOilV.GasOilM2 gasv = gasm.new GasOilM2();
+				Thread t1 = new Thread(gasv);
+				
+				t1.start();
+				
 				
 			}
-
 		});
+		
+		
+		
 		ImageIcon FoodFighterImage = new ImageIcon("image\\FoodFighter.png");
 		JButton FoodFighterButton = new JButton(FoodFighterImage);
 		FoodFighterButton.setLocation(274, 471);
@@ -160,6 +119,7 @@ public class WorkNetV {
 			}
 
 		});
+		
 
 
 
