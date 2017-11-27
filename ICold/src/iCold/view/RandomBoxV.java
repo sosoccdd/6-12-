@@ -182,7 +182,7 @@ public class RandomBoxV {
 						
 						else if(num<85) {
 							F.getCardLayout().show(F.getContentPane(), "two");
-<<<<<<< HEAD
+
 							char[] cr = new char[i.clothDisplay().length()];
 							cr = i.clothDisplay().toCharArray();
 							
@@ -193,11 +193,9 @@ public class RandomBoxV {
 							}
 							if(!(ar.contains('6')))
 								i.addCloth("6");
-							
-=======
 
 							i.addCloth("6");
->>>>>>> branch 'master' of https://github.com/sosoccdd/6-12-
+
 						}
 						}
 					}
