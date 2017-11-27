@@ -262,7 +262,6 @@ public class GasOilV extends JFrame implements Runnable{
 							public void actionPerformed(ActionEvent e) {
 								
 								sd.setVisible(false);
-								//jr.dispose();
 								System.out.println("¸¶ÀÌ¾Æ");
 								jr.setVisible(false);
 								new WorkNetV();
