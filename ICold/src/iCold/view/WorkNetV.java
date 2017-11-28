@@ -28,7 +28,12 @@ public class WorkNetV {
 		Dimension frameSize = jframe.getSize();
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		jframe.setLocation((screenSize.width - frameSize.width)/2, (screenSize.height - frameSize.height)/2);
-			
+		
+		ImageIcon image = new ImageIcon("image\\æ∆¡‹∏∂.png");
+		JLabel imagelabel  = new JLabel(image);
+		imagelabel.setLocation(53, 72);
+		imagelabel.setSize(879, 411);
+		jframe.getContentPane().add(imagelabel);
 
 		JButton ClothButton = new JButton("ø  ¿Â");
 		ClothButton.setFont(new Font("±º∏≤", Font.BOLD, 20));
