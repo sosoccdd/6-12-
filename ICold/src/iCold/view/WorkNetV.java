@@ -76,7 +76,6 @@ public class WorkNetV {
 				new CrushCarV();
 
 			}
-
 		});
 		ImageIcon GasOilImage = new ImageIcon("image\\GasOil.png");
 		JButton GasOilButton = new JButton(GasOilImage);
