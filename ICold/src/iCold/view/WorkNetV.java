@@ -20,7 +20,7 @@ import iCold.model.vo.GasOilStart;
 import iCold.view.*;
 
 public class WorkNetV {
-	GasOilV gasm = new GasOilV();
+	//GasOilV gasm = new GasOilV();
 	public WorkNetV(){
 		JFrame jframe = new JFrame("WorkNet");
 		jframe.setBounds(1000, 1000, 1000, 700);
@@ -28,12 +28,7 @@ public class WorkNetV {
 		Dimension frameSize = jframe.getSize();
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		jframe.setLocation((screenSize.width - frameSize.width)/2, (screenSize.height - frameSize.height)/2);
-		
-		if(gasm.jr.isVisible()){
-			gasm.stopOilM();
-		}
-		
-		
+			
 
 		JButton ClothButton = new JButton("ø  ¿Â");
 		ClothButton.setFont(new Font("±º∏≤", Font.BOLD, 20));
@@ -93,16 +88,17 @@ public class WorkNetV {
 			public void actionPerformed(ActionEvent arg0) {
 			
 				jframe.setVisible(false);
-				GasOilV.GasOilM2 gasv = gasm.new GasOilM2();
+				GasOilV.GasOilM2 gasv = new GasOilV.GasOilM2();
 				Thread t1 = new Thread(gasv);
 				t1.start();
+				GasOilV.jr.setVisible(false);
 				
 				
 			}
 				
 		});
 		
-	
+		
 		
 		ImageIcon FoodFighterImage = new ImageIcon("image\\FoodFighter.png");
 		JButton FoodFighterButton = new JButton(FoodFighterImage);
