@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 
 72
 012345666
+=======
+11
+17
+123
+>>>>>>> branch 'master' of https://github.com/sosoccdd/6-12-
