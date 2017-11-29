@@ -1,9 +1,11 @@
 package iCold.view;
 
 import java.awt.Dimension;
+import java.awt.Image;
 import java.awt.Toolkit;
 
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -13,6 +15,8 @@ import iCold.model.dao.IColdFunction;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Container;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -33,23 +37,22 @@ public class FoodFighterV extends JFrame {
 
 	public FoodFighterV() {
 		i = new IColdFunction();
-		JFrame fr = new JFrame("푸드파이터");
-		fr.setBounds(1000, 1000, 1000, 700);
-		fr.setLayout(null);
-		Dimension frameSize = fr.getSize();
+		
+		setBounds(1000, 1000, 1000, 700);
+		Dimension frameSize = this.getSize();
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-		fr.setLocation((screenSize.width - frameSize.width) / 2, (screenSize.height - frameSize.height) / 2);
+		this.setLocation((screenSize.width - frameSize.width) / 2, (screenSize.height - frameSize.height) / 2);
 
 		card = new CardLayout();
 
-		setBounds(500, 500, 800, 800);
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLayout(card);
+		setResizable(false);
 
 		panel1 = new panel1(this);
 		panel2 = new panel2(this);
-		panel3 = new panel3();
+		panel3 = new panel3(this);
 
 		getContentPane().add("one", panel1);
 		getContentPane().add("two", panel2);
@@ -176,12 +179,35 @@ public class FoodFighterV extends JFrame {
 	}
 
 	class panel3 extends JPanel {
+		private Image backIcon = new ImageIcon("image/backIcon.png").getImage().getScaledInstance(60, 60, 0);
+		private ImageIcon backIcon2 = new ImageIcon(backIcon);
+		private FoodFighterV f;
 
-		panel3() {
-
+		
+		panel3(FoodFighterV f) {
+			this.f=f;
+			setLayout(null);
 			JLabel suc = new JLabel("성공!");
 			suc.setBounds(10, 10, 300, 300);
 			add(suc);
+			
+			JButton back = new JButton(new ImageIcon(backIcon));
+			back.setBounds(10,10,100,50);
+			add(back);
+			
+			back.addActionListener(new ActionListener() {
+				
+
+				
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					f.setVisible(false);
+					new WorkNetV();
+					
+				}
+				
+			});
 
 		}
 
