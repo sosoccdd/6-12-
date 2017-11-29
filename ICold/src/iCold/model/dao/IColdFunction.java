@@ -10,7 +10,7 @@ import java.io.FileWriter;
 public class IColdFunction {
 
 	public IColdFunction() {}
-
+	
 	public String nameDisplay() {
 		String name = null;
 		try (BufferedReader br = new BufferedReader(new FileReader("Information.txt"))) {
@@ -90,7 +90,7 @@ public class IColdFunction {
 
 	}
 	
-	public void addCloth(int num) {
+	public void addCloth(String num) {
 		String name = nameDisplay(); //파일 덮어쓰기 전 name정보를 백업하기 위해 name값 전달받음
 		String cloth = this.clothDisplay();
 		String cloth2 = cloth+num; //cloth값을 불러온 후 인자값을 문자열에 더함
@@ -112,3 +112,4 @@ public class IColdFunction {
 
 
 }
+
