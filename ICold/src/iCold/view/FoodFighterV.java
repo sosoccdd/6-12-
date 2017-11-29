@@ -8,50 +8,183 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class FoodFighterV extends JFrame{
-			
-		public FoodFighterV() {
-			JFrame fr=new JFrame("푸드파이터");
-			fr.setBounds(1000, 1000, 1000, 700);
-			fr.setLayout(null);
-			Dimension frameSize = fr.getSize();
-			Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-			fr.setLocation((screenSize.width - frameSize.width)/2, (screenSize.height - frameSize.height)/2);
+import iCold.model.dao.IColdFunction;
 
-			
-			//ImageIcon gh1=new ImageIcon("images\\qoruds.jpg");
-			ImageIcon gh2=new ImageIcon("images\\그림28.png");
-			ImageIcon gh3=new ImageIcon("images\\그림29.png");
-			ImageIcon gh4=new ImageIcon("images\\그림31.png");
-			
-			JPanel gh2panel =new JPanel();
-			JLabel gh2label =new JLabel(gh2);
-			gh2label.add(gh2label);
-			gh2label.setSize(150, 160);
-			gh2label.setLocation(350, 300);
-			
-			JPanel gh3panel =new JPanel();
-			JLabel gh3label =new JLabel(gh3);
-			gh3panel.add(gh3label);
-			gh3panel.setSize(150, 160);
-			gh3panel.setLocation(350, 300);
-			
-			JPanel gh4panel =new JPanel();
-			JLabel gh4label =new JLabel(gh4);
-			gh4panel.add(gh4label);
-			gh4panel.setSize(80, 90);
-			gh4panel.setLocation(300, 400);
-			
-			
-			
-			
-			fr.add(gh2label);
-			//fr.add(gh3panel);
-			//fr.add(gh4panel);
-			
-			
-			fr.setVisible(true);
-			fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+import java.awt.CardLayout;
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class FoodFighterV extends JFrame {
+
+	IColdFunction i;
+	JPanel panel1;
+	JPanel panel2;
+	JPanel panel3;
+	CardLayout card;
+	int ctn = 0;
+
+	public FoodFighterV() {
+		i = new IColdFunction();
+		JFrame fr = new JFrame("푸드파이터");
+		fr.setBounds(1000, 1000, 1000, 700);
+		fr.setLayout(null);
+		Dimension frameSize = fr.getSize();
+		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		fr.setLocation((screenSize.width - frameSize.width) / 2, (screenSize.height - frameSize.height) / 2);
+
+		card = new CardLayout();
+
+		setBounds(500, 500, 800, 800);
+		setVisible(true);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setLayout(card);
+
+		panel1 = new panel1(this);
+		panel2 = new panel2(this);
+		panel3 = new panel3();
+
+		getContentPane().add("one", panel1);
+		getContentPane().add("two", panel2);
+		getContentPane().add("three", panel3);
+
+	}
+
+	class panel1 extends JPanel implements MouseListener {
+		private JLabel img1;
+		private FoodFighterV l;
+
+		panel1(FoodFighterV l) {
+			this.l = l;
+
+			setLayout(null);
+
+			img1 = new JLabel(new ImageIcon("image/그림28.png"));
+
+			img1.setBounds(0, 0, 300, 300);
+			add(img1);
+			repaint();
+
+			addMouseListener(this);
+
 		}
-	
+
+		@Override
+		public void mouseClicked(MouseEvent e) {
+			this.setVisible(false);
+			l.card.show(l.getContentPane(), "two");
+			l.ctn += 1;
+
+			if (l.ctn > 30) {
+				this.setVisible(false);
+				l.card.show(l.getContentPane(), "three");
+				l.ctn = 0;
+				i.addCoin(3);
+			}
+
+		}
+
+		@Override
+		public void mousePressed(MouseEvent e) {
+			// TODO Auto-generated method stub
+
+		}
+
+		@Override
+		public void mouseReleased(MouseEvent e) {
+			// TODO Auto-generated method stub
+
+		}
+
+		@Override
+		public void mouseEntered(MouseEvent e) {
+			// TODO Auto-generated method stub
+
+		}
+
+		@Override
+		public void mouseExited(MouseEvent e) {
+			// TODO Auto-generated method stub
+
+		}
+	}
+
+	class panel2 extends JPanel implements MouseListener {
+		private JLabel img1;
+		private FoodFighterV l;
+
+		panel2(FoodFighterV l) {
+			this.l = l;
+
+			setLayout(null);
+
+			img1 = new JLabel(new ImageIcon("image/그림29.png"));
+			img1.setBounds(0, 0, 300, 300);
+			add(img1);
+			repaint();
+
+			addMouseListener(this);
+
+		}
+
+		@Override
+		public void mouseClicked(MouseEvent e) {
+			this.setVisible(false);
+			l.card.show(l.getContentPane(), "one");
+			l.ctn += 1;
+
+			if (l.ctn > 30) {
+				this.setVisible(false);
+				l.card.show(l.getContentPane(), "three");
+				l.ctn = 0;
+				i.addCoin(3);
+			}
+
+		}
+
+		@Override
+		public void mousePressed(MouseEvent e) {
+			// TODO Auto-generated method stub
+
+		}
+
+		@Override
+		public void mouseReleased(MouseEvent e) {
+			// TODO Auto-generated method stub
+
+		}
+
+		@Override
+		public void mouseEntered(MouseEvent e) {
+			// TODO Auto-generated method stub
+
+		}
+
+		@Override
+		public void mouseExited(MouseEvent e) {
+			// TODO Auto-generated method stub
+
+		}
+
+	}
+
+	class panel3 extends JPanel {
+
+		panel3() {
+
+			JLabel suc = new JLabel("성공!");
+			suc.setBounds(10, 10, 300, 300);
+			add(suc);
+
+		}
+
+	}
+
 }

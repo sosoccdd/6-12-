@@ -39,7 +39,7 @@ public class RandomBoxV {
 			setResizable(true);
 			setVisible(true);
 			
-			System.out.println("d");
+			
 			getContentPane().setLayout(card);
 			getContentPane().add("one", new BoxPanel(this));
 			getContentPane().add("five", new Rejected(this));
