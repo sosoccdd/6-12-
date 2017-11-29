@@ -42,8 +42,8 @@ public class SelectGenderV extends JFrame{
 		nickText.setLocation(440, 500);
 		nickText.setSize(120, 30);
 		
-		JButton checkButton = new JButton("확  인");
-		checkButton.setFont(new Font("굴림", Font.BOLD, 20));
+		ImageIcon check = new ImageIcon("image\\확인1.png");
+		JButton checkButton = new JButton(check);
 		checkButton.setLocation(393, 542);
 		checkButton.setSize(150, 50);
 		checkButton.addActionListener(new ActionListener() {

@@ -71,10 +71,10 @@ public class ClothStoreV extends JFrame{
 		nickName.setSize(203, 50);
 
 		ClothStoreM clotharr[] = new ClothStoreM[5];
-		clotharr[0] = new ClothStoreM("ø 1", 1, '1');
-		clotharr[1] = new ClothStoreM("ø 2", 2, '2');
-		clotharr[2] = new ClothStoreM("ø 3", 3, '3');
-		clotharr[3] = new ClothStoreM("ø 4", 4, '4');
+		clotharr[0] = new ClothStoreM("∆Ì«—ø ", 1, '1');
+		clotharr[1] = new ClothStoreM("ø‹√‚∫π", 2, '2');
+		clotharr[2] = new ClothStoreM("√º≈©µÂ∑πΩ∫", 3, '3');
+		clotharr[3] = new ClothStoreM("∏È¡¢∫π¿Â", 4, '4');
 		clotharr[4] = new ClothStoreM("ø 5", 5, '5');
 
 		ImageIcon images[] = new ImageIcon[5];
@@ -90,7 +90,7 @@ public class ClothStoreV extends JFrame{
 		clothLabel.setSize(319, 25);
 
 
-		JButton clothImages = new JButton();
+		JLabel clothImages = new JLabel();
 		clothImages.setIcon(images[0]);
 		clothImages.setLocation(601, 118);
 		clothImages.setSize(195, 350);
