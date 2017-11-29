@@ -51,18 +51,9 @@ public class StartStoryV extends JFrame{
 				storylabel.setIcon(story3);			
 			}
 		};
-		TimerTask time3 = new TimerTask() {		
-			@Override
-			public void run() {
-				jframe.setVisible(false);
-				new ClothRoomV();	
-			}
-		};
-		
-		
-		time[0].schedule(time1, set_time);
-		time[1].schedule(time2, set_time*2);
-		time[2].schedule(time3, set_time*3);
+				
+		time[0].schedule(time1, set_time*2);
+		time[1].schedule(time2, set_time*4);
 		
 		ImageIcon skip = new ImageIcon("image\\skip.png");
 		JButton SkipButton = new JButton(skip);
