@@ -1,10 +1,13 @@
 package iCold.view;
 
+import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.Timer;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -22,9 +25,9 @@ public class GasPanel extends JPanel{
 	JLabel gagelabel;
 	JLabel coinlabel;
 	JLabel backgr;
-
+	int a=0;
 	int gagecount = 0;
-	int coincount = 0;
+	static int coincount = 0;
 
 	ImageIcon oilimage = new ImageIcon("image\\oil.png");
 	ImageIcon batang = new ImageIcon("image\\batang.jpg");
@@ -39,7 +42,12 @@ public class GasPanel extends JPanel{
 	ImageIcon  oil[];
 	ImageIcon coin = new ImageIcon("image\\coin1.png");
 
-
+	int mTime = 1000;
+	
+	
+	public GasPanel(){}
+	
+	
 	public GasPanel(JFrame jr){
 		this.jr = jr;
 		mainpanel = new JPanel();
@@ -57,6 +65,20 @@ public class GasPanel extends JPanel{
 		
 */		
 		//background();
+		
+		/*ImageIcon timegage = new ImageIcon("image\\timegage");
+		time = new JLabel(timegage);
+		time.setSize(900, 600);
+		time.setLocation(10, 10);
+		
+		panel.add(time);
+		*/
+		
+		 
+		
+		
+		
+		
 		sonLabel();
 		oilLabel();
 		alLabel();
@@ -78,7 +100,7 @@ public class GasPanel extends JPanel{
 
 		JLabel coinlabel = new JLabel(coin);
 		coinlabel.setSize(150, 150);
-		coinlabel.setLocation(100, 80);
+		coinlabel.setLocation(350, 80);
 
 		sonlabel.addMouseListener(new MouseListener() {			
 			@Override
@@ -197,8 +219,11 @@ public class GasPanel extends JPanel{
 				jr.revalidate();             //JPanel ¸®ÇÁ·¹½Ã
 				jr.repaint();
 				gagecount = 0;
-				coincount+=50;
-				System.out.println("È¹µæ ±Ý¾× : " + coincount);
+				
+//				coincount+=50;
+				a+=3;
+				setCoincount(a);
+	//			System.out.println("È¹µæ ±Ý¾× : " + coincount);
 				sonlabel.setLocation(500, 220);
 				int ran = (int) (Math.random()*4+1);
 				System.out.println("·£´ý°ª : " + ran);
@@ -237,8 +262,8 @@ public class GasPanel extends JPanel{
 		oillabel.setLocation(220, 200);	
 		mainpanel.add(oillabel);						
 	}
-
 	public void sonLabel() {		
+
 		sonlabel = new JLabel(son1);		
 		sonlabel.setSize(220, 250);
 		sonlabel.setLocation(500, 220);			
@@ -255,9 +280,20 @@ public class GasPanel extends JPanel{
 		
 		mainpanel.add(backgr);
 
-			
-
 	}
+	
+	public void setCoincount(int coincount) {
+		this.coincount = coincount;
+	}
+	public static int getCoincount() {
+		return coincount;
+	}
+	
+	public int getCoin(){
+		return this.coincount;
+	}
+	
+	
 
 
 

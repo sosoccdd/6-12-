@@ -39,7 +39,6 @@ public class ChangePanel{
 
 
 
-
 /*
 JDialog dia = new JDialog(jr, "시간 종료", true);
 dia.setSize(300, 300);

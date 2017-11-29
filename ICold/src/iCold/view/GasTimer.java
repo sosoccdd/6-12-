@@ -6,6 +6,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -19,10 +20,16 @@ public class GasTimer extends Thread{
 	
 	JFrame jr;
 	JPanel panel;
+	JLabel time;
 	ChangePanel p;
+	
 	public GasTimer(JFrame jr, JPanel panel){
 		this.jr = jr;
-		this.panel = panel;		
+		this.panel = panel;
+		
+		
+		
+		
 	}
 	
 	@Override
@@ -37,6 +44,7 @@ public class GasTimer extends Thread{
 			try {
 				System.out.println(i);
 				this.sleep(100);
+				
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}			
@@ -52,13 +60,6 @@ public class GasTimer extends Thread{
 		
 		
 	}
-	
-	public void showScore(){
-		
-		
-	}
-	
-	
 	
 
 }
