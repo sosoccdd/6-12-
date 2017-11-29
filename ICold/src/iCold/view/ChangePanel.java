@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 
 import iCold.model.vo.GasMain;
 
-public class ChangePanel extends JDialog{
+public class ChangePanel{
 	
 	JFrame jr;
 	JPanel panel;
@@ -21,33 +21,16 @@ public class ChangePanel extends JDialog{
 	public ChangePanel(JFrame jr, JPanel panel){
 		this.jr = jr;
 		this.panel = panel; 
-		
-		//this = new JDialog(jr, "시간 종료", true);
-		this.setTitle("시간 종료");
-		this.setSize(300, 300);
-		this.setLocation(250, 250);
-		this.setLayout(null);
-		
-		JLabel addlabel = new JLabel("Test");
-		addlabel.setSize(80, 80);
-		addlabel.setLocation(50, 50);
-		
-		JLabel totallabel = new JLabel("종합");
-		totallabel.setSize(80, 80);
-		totallabel.setLocation(50, 150);
-		
-		JButton button = new JButton("돌아가기");
-		button.setSize(80, 80);
-		button.setLocation(50, 250);
-		
-		this.add(addlabel);
-		this.add(totallabel);
-		this.add(button);
-		
-		jr.add(this);
-		
-		
 	
+	}
+	
+	public void replacePanel(JPanel ChangePanel){
+		
+		jr.remove(panel);
+		jr.add(ChangePanel);
+		jr.repaint();
+		
+		
 	}
 }
 

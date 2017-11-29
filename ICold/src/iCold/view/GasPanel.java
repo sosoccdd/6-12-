@@ -47,7 +47,16 @@ public class GasPanel extends JPanel{
 		mainpanel.setLocation(0, 0);
 		mainpanel.setSize(1000, 700);
 
-		background();
+		/*JPanel background = new JPanel(){
+			public void paintComponent(Graphics g){
+				g.drawImage(batang.getImage(), 0, 0, null);
+				setOpaque(true);
+				super.paintComponent(g);
+			}
+		};
+		
+*/		
+		//background();
 		sonLabel();
 		oilLabel();
 		alLabel();

@@ -41,18 +41,19 @@ public class GasTimer extends Thread{
 				e.printStackTrace();
 			}			
 		}
-		p = new ChangePanel(jr, panel);
-		JOptionPane.showMessageDialog(p, "게임이 끝났습니다.");
-		//new ChangePanel(jr, panel);
-		//showScore();
-		//new ChangePanel(jr, panel);
+		
+		
+		jr.setVisible(false);
+		new GasPanelChange();
+		
+		//JOptionPane.showMessageDialog(null, "게임이 끝났습니다.");
+		
 		
 		
 		
 	}
 	
 	public void showScore(){
-		//new ShowScore(jr, panel).saveScore();
 		
 		
 	}
