@@ -31,7 +31,7 @@ import javax.swing.plaf.LabelUI;
 public class GasOilV extends JFrame implements Runnable{
 	int count = 0;
 	int coincount = 0;
-	JFrame jr = new JFrame("주유소 게임");
+	static JFrame jr = new JFrame("주유소 게임");
 
 	boolean result = true;
 
@@ -220,7 +220,7 @@ public class GasOilV extends JFrame implements Runnable{
 	}
 
 
-	class GasOilM2 extends GasOilV implements Runnable{
+	static class GasOilM2 extends GasOilV implements Runnable{
 
 
 
@@ -248,6 +248,14 @@ public class GasOilV extends JFrame implements Runnable{
 			
 			JButton button2 = new JButton("돌아가기");
 			sd.add(button2);
+			button2.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent arg0) {
+					jr.setVisible(false);
+					
+				}
+			});
 
 			try {
 				for(int i = 0; i<=100; i++){
@@ -261,10 +269,9 @@ public class GasOilV extends JFrame implements Runnable{
 							@Override
 							public void actionPerformed(ActionEvent e) {
 								
+								//jr.setVisible(false);
 								sd.setVisible(false);
-								//jr.dispose();
 								System.out.println("마이아");
-								jr.setVisible(false);
 								new WorkNetV();
 							}
 						});

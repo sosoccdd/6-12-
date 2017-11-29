@@ -6,6 +6,7 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
@@ -19,7 +20,8 @@ public class StartStoryV {
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		jframe.setLocation((screenSize.width - frameSize.width)/2, (screenSize.height - frameSize.height)/2);
 		
-		JButton SkipButton = new JButton("Skip");
+		ImageIcon skip = new ImageIcon("image\\skip.png");
+		JButton SkipButton = new JButton(skip);
 		SkipButton.setFont(new Font("±¼¸²", Font.BOLD, 20));
 		SkipButton.setLocation(786, 569);
 		SkipButton.setSize(150, 50);
