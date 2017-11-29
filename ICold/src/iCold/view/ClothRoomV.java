@@ -13,6 +13,10 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -25,6 +29,7 @@ import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.TransferHandler;
 
 import iCold.model.dao.IColdFunction;
 import iCold.model.vo.ClothStoreM;
@@ -237,6 +242,10 @@ public class ClothRoomV extends JComponent implements MouseListener, MouseMotion
 			}
 
 		});
+
+
+					
+
 
 		JButton nickName = new JButton(function.nameDisplay());
 		nickName.setFont(new Font("±¼¸²", Font.BOLD, 20));
