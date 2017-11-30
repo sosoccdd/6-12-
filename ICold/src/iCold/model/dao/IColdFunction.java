@@ -11,6 +11,19 @@ public class IColdFunction {
 
 	public IColdFunction() {}
 	
+	public void reset() {
+		try (BufferedWriter bw = new BufferedWriter(new FileWriter("information.txt"))){
+			bw.write(0);
+			bw.newLine();
+			bw.write("0");
+			bw.newLine();
+			bw.write("0");
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
 	public String nameDisplay() {
 		String name = null;
 		try (BufferedReader br = new BufferedReader(new FileReader("Information.txt"))) {
