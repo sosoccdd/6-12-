@@ -268,7 +268,6 @@ public class CrushCarM extends JPanel implements KeyListener, ActionListener {
       g.setFont(g.getFont().deriveFont(20.0f));
       g.drawString("A,S 키 공격 , 방향키 좌우 .", 700, 40);
 
-
       g.setColor(Color.red);
       g.drawRect(0, 40, hp[0], 20);
       g.drawRect(0, 0, mTime, 20);
