@@ -34,9 +34,10 @@ public class RandomBoxV {
 			Dimension frameSize = getSize();
 			Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 			setLocation((screenSize.width - frameSize.width)/2, (screenSize.height - frameSize.height)/2);
-
+			
+			
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			setResizable(true);
+			setResizable(false);
 			setVisible(true);
 			
 			
@@ -62,7 +63,7 @@ public class RandomBoxV {
 		private JButton announce;
 		private JLabel oops;
 		private JButton previous;
-		public Image backgroundI = new ImageIcon("image/그림9.png").getImage().getScaledInstance(970, 640, 0);
+		public Image backgroundI = new ImageIcon("image/그림9.png").getImage().getScaledInstance(1000, 660, 0);
 		public ImageIcon backgroundIc = new ImageIcon(backgroundI);
 		private Image backIcon = new ImageIcon("Image/backIcon.png").getImage().getScaledInstance(60, 60, 0);
 		private Image oopsI = new ImageIcon("image/oops.png").getImage().getScaledInstance(970, 640 , 0);
@@ -114,7 +115,7 @@ public class RandomBoxV {
 			private JTextField wallet;
 			private JButton guessWhat;
 			private JButton quit;
-			private Image background = new ImageIcon("image/BoxPanel.png").getImage().getScaledInstance(970, 640, 0);
+			private Image background = new ImageIcon("image/BoxPanel.png").getImage().getScaledInstance(1000, 660, 0);
 			private ImageIcon background2 = new ImageIcon(background);
 			private Image backIcon = new ImageIcon("image/backIcon.png").getImage().getScaledInstance(60, 60, 0);
 			private ImageIcon backIcon2 = new ImageIcon(backIcon);
@@ -250,7 +251,7 @@ public class RandomBoxV {
 			private JLabel announce;
 			private JLabel SuitImage;
 			private JButton previous;
-			private Image background = new ImageIcon("image/그림9.png").getImage().getScaledInstance(970, 640, 0);
+			private Image background = new ImageIcon("image/그림9.png").getImage().getScaledInstance(1000, 660, 0);
 			private ImageIcon background2 = new ImageIcon(background);
 			private Image backIcon = new ImageIcon("image/backIcon.png").getImage().getScaledInstance(60, 60, 0);
 			private ImageIcon backIcon2 = new ImageIcon(backIcon);
@@ -310,7 +311,7 @@ public class RandomBoxV {
 			private JLabel announce;
 			private JLabel coinImage;
 			private JButton previous;
-			private Image background = new ImageIcon("image/그림9.png").getImage().getScaledInstance(970, 640, 0);
+			private Image background = new ImageIcon("image/그림9.png").getImage().getScaledInstance(1000, 660, 0);
 			private ImageIcon background2 = new ImageIcon(background);
 			private Image backIcon = new ImageIcon("image/backIcon.png").getImage().getScaledInstance(60, 60, 0);
 			private ImageIcon backIcon2 = new ImageIcon(backIcon);
@@ -374,7 +375,7 @@ public class RandomBoxV {
 			private JLabel announce;
 			private JLabel omg;
 			private JButton previous;
-			private Image backgroundI = new ImageIcon("image/그림9.png").getImage().getScaledInstance(970, 640, 0);
+			private Image backgroundI = new ImageIcon("image/그림9.png").getImage().getScaledInstance(1000, 660, 0);
 			private ImageIcon backgroundIc = new ImageIcon(backgroundI);
 			private Image backIcon = new ImageIcon("image/backIcon.png").getImage().getScaledInstance(60, 60, 0);
 			private ImageIcon backIcon2 = new ImageIcon(backIcon);

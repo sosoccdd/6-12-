@@ -13,25 +13,26 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.io.File;
 
-import javax.imageio.ImageIO;
+
+
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
+
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
 
 import iCold.model.dao.IColdFunction;
 import iCold.model.vo.CrushCarM;
 
 
 public class CrushCarV extends JFrame{
-	//IColdFunction function = new IColdFunction();
-	public static JFrame frame = new JFrame("Crush car");
-	public static Clip clip;
+
+   //IColdFunction function = new IColdFunction();
+   public static JFrame frame = new JFrame("Crush car");
+   public static Clip clip;
+
    public CrushCarV() {
       
       frame.setContentPane(new CrushCarM());
@@ -40,12 +41,11 @@ public class CrushCarV extends JFrame{
       
       
       
+      
       frame.setLayout(null);
       frame.setLocationRelativeTo(null);
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       frame.setVisible(true);
-      
-
       
       try
       {
