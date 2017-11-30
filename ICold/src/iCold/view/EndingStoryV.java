@@ -230,8 +230,7 @@ public class EndingStoryV extends JFrame{
 			show.setBounds(300,300,200,100);
 			add(show);
 			setVisible(true);
-		}
-				
+		}				
 	}
 }
 	
