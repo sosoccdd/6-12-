@@ -105,7 +105,7 @@ public class IColdFunction {
 			bw.close();//파일에 백업용 coin정보와 추가된 옷 정보 덮어쓰기
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			e.printStackTrace(); 
 		}
 
 	}
