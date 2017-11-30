@@ -60,18 +60,32 @@ public class RandomBoxV {
 	public static class Rejected extends JPanel {
 		private MainFrame F;
 		private JButton announce;
+		private JLabel oops;
 		private JButton previous;
+		public Image backgroundI = new ImageIcon("image/그림9.png").getImage().getScaledInstance(970, 640, 0);
+		public ImageIcon backgroundIc = new ImageIcon(backgroundI);
 		private Image backIcon = new ImageIcon("Image/backIcon.png").getImage().getScaledInstance(60, 60, 0);
+		private Image oopsI = new ImageIcon("image/oops.png").getImage().getScaledInstance(970, 640 , 0);
 		
+		@Override
+		public void paintComponent(Graphics g) {
+			g.drawImage(backgroundIc.getImage(), 0, 0, null);
+			this.setOpaque(false);
+			
+			super.paintComponent(g);
+		}
 		
 		Rejected(MainFrame f){
 			F = f;
 			setLayout(null);
-			announce = new JButton("코인이 부족합니다!");
-			announce.setFont(new Font("굴림", Font.BOLD, 50));
-			announce.setBounds(240,10,500,80);
+			announce = new JButton("코인이 부족합니다");
+			announce.setBounds(255,510,500,90);
+			announce.setFont(new Font("굴림", Font.BOLD, 40));
 			this.add(announce);
 			
+			oops = new JLabel(new ImageIcon(oopsI));
+			oops.setBounds(100, 120, 800, 400);
+			add(oops);
 			
 			previous = new JButton(new ImageIcon(backIcon));
 		    previous.setBounds(10,10,100,50);
@@ -100,10 +114,12 @@ public class RandomBoxV {
 			private JTextField wallet;
 			private JButton guessWhat;
 			private JButton quit;
-			private Image background = new ImageIcon("image/BoxPanel.png").getImage().getScaledInstance(980, 640, 0);
+			private Image background = new ImageIcon("image/BoxPanel.png").getImage().getScaledInstance(970, 640, 0);
 			private ImageIcon background2 = new ImageIcon(background);
 			private Image backIcon = new ImageIcon("image/backIcon.png").getImage().getScaledInstance(60, 60, 0);
 			private ImageIcon backIcon2 = new ImageIcon(backIcon);
+			
+			
 			IColdFunction i = new IColdFunction();
 
 			@Override
@@ -169,6 +185,16 @@ public class RandomBoxV {
 						i.subCoin(3);
 						wallet.setText(i.coinDisplay()+"코인");
 						
+						char[] cr = new char[i.clothDisplay().length()];
+						cr = i.clothDisplay().toCharArray();
+						
+						ArrayList ar = new ArrayList();
+						
+						for (int i = 0; i < cr.length; i++) {
+							ar.add(i, cr[i]);
+						}
+						
+						
 						if(num<60) {
 						    F.getCardLayout().show(F.getContentPane(), "four");
 						 
@@ -181,20 +207,28 @@ public class RandomBoxV {
 						}
 						
 						else if(num<85) {
+							if(ar.contains('6')) {
+								F.getCardLayout().show(F.getContentPane(), "three");
+								i.addCoin(10);
+								wallet.setText(i.coinDisplay()+"코인");
+							}
+							else {
 							F.getCardLayout().show(F.getContentPane(), "two");
 
-							char[] cr = new char[i.clothDisplay().length()];
+							/*
+							//char[] cr = new char[i.clothDisplay().length()];
 							cr = i.clothDisplay().toCharArray();
 							
-							ArrayList ar = new ArrayList();
+							//ArrayList ar = new ArrayList();
 							
 							for (int i = 0; i < cr.length; i++) {
 								ar.add(i, cr[i]);
-							}
+							}*/
 							if(!(ar.contains('6')))
 								i.addCloth("6");
 
 							i.addCloth("6");
+							}
 
 						}
 						}
@@ -214,12 +248,14 @@ public class RandomBoxV {
 			private MainFrame F;
 			private JButton getSuit;
 			private JLabel announce;
-			private JButton SuitImage;
+			private JLabel SuitImage;
 			private JButton previous;
-			private Image background = new ImageIcon("image/BoxBackground.png").getImage().getScaledInstance(980, 640, 0);
+			private Image background = new ImageIcon("image/그림9.png").getImage().getScaledInstance(970, 640, 0);
 			private ImageIcon background2 = new ImageIcon(background);
 			private Image backIcon = new ImageIcon("image/backIcon.png").getImage().getScaledInstance(60, 60, 0);
 			private ImageIcon backIcon2 = new ImageIcon(backIcon);
+			
+			private Image suitI = new ImageIcon("image/yeah.png").getImage().getScaledInstance(970, 640, 0);
 			
 			@Override
 			public void paintComponent(Graphics g) {
@@ -235,13 +271,13 @@ public class RandomBoxV {
 				setSize(330, 80);
 				setLayout(null);
 				
-				getSuit = new JButton("히든 아이템 등장! -3코인!");
+				getSuit = new JButton("히든 아이템+1");
 				getSuit.setFont(new Font("굴림", Font.BOLD, 50));
-				getSuit.setBounds(170, 10, 700, 80);
+				getSuit.setBounds(255,510,500,90);
 				add(getSuit);
 				
-				SuitImage = new JButton(new ImageIcon("image/옷6.png"));
-				SuitImage.setBounds(280, 120, 500, 400);
+				SuitImage = new JLabel(new ImageIcon("image/yeah.png"));
+				SuitImage.setBounds(70, 120, 800, 400);
 				add(SuitImage);
 				
 				previous = new JButton(new ImageIcon(backIcon));
@@ -272,12 +308,14 @@ public class RandomBoxV {
 			private MainFrame F;
 			private JButton getCoinBox;
 			private JLabel announce;
-			private JButton coinImage;
+			private JLabel coinImage;
 			private JButton previous;
-			private Image background = new ImageIcon("image/BoxBackground.png").getImage().getScaledInstance(980, 640, 0);
+			private Image background = new ImageIcon("image/그림9.png").getImage().getScaledInstance(970, 640, 0);
 			private ImageIcon background2 = new ImageIcon(background);
 			private Image backIcon = new ImageIcon("image/backIcon.png").getImage().getScaledInstance(60, 60, 0);
 			private ImageIcon backIcon2 = new ImageIcon(backIcon);
+			
+			private Image wowI = new ImageIcon("image/wow.png").getImage().getScaledInstance(970, 640, 0);
 			
 			@Override
 			public void paintComponent(Graphics g) {
@@ -293,13 +331,13 @@ public class RandomBoxV {
 				setSize(330, 80);
 				setLayout(null);
 				
-				getCoinBox = new JButton("코인 더미 등장! +7코인");
-				getCoinBox.setFont(new Font("굴림", Font.BOLD, 50));
-				getCoinBox.setBounds(170, 10, 700, 80);
+				getCoinBox = new JButton("코인+7");
+				getCoinBox.setFont(new Font("굴림", Font.BOLD, 40));
+				getCoinBox.setBounds(255,510,500,90);
 				add(getCoinBox);
 				
-				coinImage = new JButton(new ImageIcon("image/coinImage.png"));
-				coinImage.setBounds(280, 120, 500, 400);
+				coinImage = new JLabel(new ImageIcon(wowI));
+				coinImage.setBounds(10, 120, 1000, 400);
 				add(coinImage);
 				
 				previous = new JButton(new ImageIcon(backIcon));
@@ -334,16 +372,19 @@ public class RandomBoxV {
 			private MainFrame F;
 			private JButton getShit;
 			private JLabel announce;
-			private JButton bewhy;
+			private JLabel omg;
 			private JButton previous;
-			private Image background = new ImageIcon("image/BoxBackground.png").getImage().getScaledInstance(980, 640, 0);
-			private ImageIcon background2 = new ImageIcon(background);
+			private Image backgroundI = new ImageIcon("image/그림9.png").getImage().getScaledInstance(970, 640, 0);
+			private ImageIcon backgroundIc = new ImageIcon(backgroundI);
 			private Image backIcon = new ImageIcon("image/backIcon.png").getImage().getScaledInstance(60, 60, 0);
 			private ImageIcon backIcon2 = new ImageIcon(backIcon);
 			
+			private Image omgI = new ImageIcon("image/omg.png").getImage().getScaledInstance(970, 640, 0);
+			
+			
 			@Override
 			public void paintComponent(Graphics g) {
-				g.drawImage(background2.getImage(), 0, 0, null);
+				g.drawImage(backgroundIc.getImage(), 0, 0, null);
 				this.setOpaque(false);
 				
 				super.paintComponent(g);
@@ -355,14 +396,14 @@ public class RandomBoxV {
 				setSize(330, 80);
 				setLayout(null);
 				
-				getShit = new JButton("구찌 티셔츠 등장! -3코인");
-				getShit.setFont(new Font("굴림", Font.BOLD, 50));
-				getShit.setBounds(170, 10, 700, 80);
+				getShit = new JButton("코인-3");
+				getShit.setFont(new Font("굴림", Font.BOLD, 40));
+				getShit.setBounds(255,510,500,90);
 				add(getShit);
 				
-				bewhy = new JButton(new ImageIcon("image/비와이.png"));
-				bewhy.setBounds(280, 120, 500, 400);
-				add(bewhy);
+				omg = new JLabel(new ImageIcon(omgI));
+				omg.setBounds(100, 120, 800, 400);
+				add(omg);
 				
 				
 				previous = new JButton(new ImageIcon(backIcon));
