@@ -155,8 +155,8 @@ public class FoodFighterV extends JFrame{
 				card.show(getContentPane(), "three");
 				getCoin = (int)ctn/20;
 				getCoinl = new JButton("ÄÚÀÎ"+getCoin+"°³ È¹µæ!");
-				getCoinl.setFont(new Font("±¼¸²",Font.BOLD,40));
-				getCoinl.setBounds(350, 200, 300, 185);
+				getCoinl.setFont(new Font("±¼¸²",Font.BOLD,50));
+				getCoinl.setBounds(320, 200, 400, 285);
 				i.addCoin(getCoin);
 				panel3.add(getCoinl);
 				

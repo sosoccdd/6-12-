@@ -22,7 +22,7 @@ import iCold.view.*;
 
 
 public class WorkNetV {
-	
+	int time1= 10000;
 	public WorkNetV(){
 		JFrame jframe = new JFrame("WorkNet");
 		jframe.setBounds(1000, 1000, 1000, 700);
@@ -66,6 +66,18 @@ public class WorkNetV {
 
 				jframe.setVisible(false);
 				new HambergerV();
+//				Timer t = new Timer();
+//				HambergerV ss = new HambergerV();
+//				TimerTask time = new TimerTask() {
+//					
+//					@Override
+//					public void run() {
+//						ss.frame();
+//						
+//					}
+//				};
+//				t.schedule(time, time1);
+				
 
 			}
 
@@ -125,7 +137,7 @@ public class WorkNetV {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				jframe.setVisible(false);
-				new BungeoppangV();
+				new BungsulV();
 
 			}
 

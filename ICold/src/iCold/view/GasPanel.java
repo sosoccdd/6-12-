@@ -2,6 +2,7 @@ package iCold.view;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -15,20 +16,20 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class GasPanel extends JPanel{
-
+	
+	//전달 받을 프레임과 패널, 사용할 라벨 선언
 	JFrame jr;
 	JPanel mainpanel;
-
 	JLabel sonlabel;
 	JLabel oillabel;
 	JLabel allabel;
 	JLabel gagelabel;
 	JLabel coinlabel;
-	JLabel backgr;
+	JLabel viewlabel;
 	int a=0;
 	int gagecount = 0;
 	static int coincount = 0;
-
+	//사용할 이미지 생성
 	ImageIcon oilimage = new ImageIcon("image\\oil.png");
 	ImageIcon batang = new ImageIcon("image\\batang.jpg");
 	ImageIcon al = new ImageIcon("image\\default.png");
@@ -41,54 +42,40 @@ public class GasPanel extends JPanel{
 	ImageIcon alget = new ImageIcon("image\\money_get.png");
 	ImageIcon  oil[];
 	ImageIcon coin = new ImageIcon("image\\coin1.png");
-
-	int mTime = 1000;
-	
+	ImageIcon icon = new ImageIcon("image\\timerim");
+	ImageIcon view = new ImageIcon("image\\게임설명2.png");
+	ImageIcon icon1;
 	
 	public GasPanel(){}
-	
-	
-	public GasPanel(JFrame jr){
-		this.jr = jr;
-		mainpanel = new JPanel();
-		mainpanel.setLayout(null);
-		mainpanel.setLocation(0, 0);
-		mainpanel.setSize(1000, 700);
 
-		/*JPanel background = new JPanel(){
+	public GasPanel(JFrame jr){
+		
+		this.jr = jr;
+		//패널 백그라운드 이미지 생성
+		icon1 = new ImageIcon("image\\진짜주유소배경.png");	
+		mainpanel = new JPanel(){
 			public void paintComponent(Graphics g){
-				g.drawImage(batang.getImage(), 0, 0, null);
-				setOpaque(true);
+				g.drawImage(icon1.getImage(), 0, 0, null);
+				setOpaque(false);
 				super.paintComponent(g);
 			}
 		};
-		
-*/		
-		//background();
-		
-		/*ImageIcon timegage = new ImageIcon("image\\timegage");
-		time = new JLabel(timegage);
-		time.setSize(900, 600);
-		time.setLocation(10, 10);
-		
-		panel.add(time);
-		*/
-		
-		 
-		
-		
-		
-		
+		//패널 설정 
+		mainpanel.setVisible(true);
+		mainpanel.setLayout(null);
+		mainpanel.setLocation(0, 0);
+		mainpanel.setSize(1000, 700);
+		//패널에 기본적으로 생성될 라벨 추가
+		sulmyung();
 		sonLabel();
 		oilLabel();
 		alLabel();
-
+		//프레임에 패널 추가
 		jr.add(mainpanel);
-
+		
 		System.out.println("플레이 시작");
-
+		//이미지 배열 생성
 		oil = new ImageIcon[4];
-
 		oil[0] = new ImageIcon("image\\oil_1.png");
 		oil[1] = new ImageIcon("image\\oil_2.png");
 		oil[2] = new ImageIcon("image\\oil_3.png");
@@ -130,7 +117,6 @@ public class GasPanel extends JPanel{
 			public void mouseClicked(MouseEvent e) {				
 			}
 		});
-
 
 		oillabel.addMouseListener(new MouseListener() {			
 			@Override
@@ -208,7 +194,6 @@ public class GasPanel extends JPanel{
 			}
 		});
 
-
 		coinlabel.addMouseListener(new MouseListener() {			
 			@Override
 			public void mouseReleased(MouseEvent e) {				
@@ -219,11 +204,9 @@ public class GasPanel extends JPanel{
 				jr.revalidate();             //JPanel 리프레시
 				jr.repaint();
 				gagecount = 0;
-				
-//				coincount+=50;
-				a+=3;
+				//코인 세터에 a값을 입력
+				a+=1;
 				setCoincount(a);
-	//			System.out.println("획득 금액 : " + coincount);
 				sonlabel.setLocation(500, 220);
 				int ran = (int) (Math.random()*4+1);
 				System.out.println("랜덤값 : " + ran);
@@ -248,6 +231,13 @@ public class GasPanel extends JPanel{
 		});
 	}
 
+	public void sulmyung() {
+		viewlabel = new JLabel(view);
+		viewlabel.setSize(600, 200);
+		viewlabel.setLocation(500, 0);
+		mainpanel.add(viewlabel);		
+	}
+
 	public void alLabel() {		
 		allabel = new JLabel(al);
 		allabel.setSize(150, 180);
@@ -262,40 +252,20 @@ public class GasPanel extends JPanel{
 		oillabel.setLocation(220, 200);	
 		mainpanel.add(oillabel);						
 	}
+	
 	public void sonLabel() {		
-
 		sonlabel = new JLabel(son1);		
 		sonlabel.setSize(220, 250);
 		sonlabel.setLocation(500, 220);			
 		mainpanel.add(sonlabel);		
 	}
 
-	public void background(){
-		JPanel backgr = new JPanel(){
-			public void paintComponent(Graphics g){
-
-				g.drawImage(batang.getImage(), 0, 0, null);				
-			}
-		};
-		
-		mainpanel.add(backgr);
-
-	}
-	
 	public void setCoincount(int coincount) {
 		this.coincount = coincount;
 	}
 	public static int getCoincount() {
 		return coincount;
 	}
-	
-	public int getCoin(){
-		return this.coincount;
-	}
-	
-	
-
-
 
 }
 
