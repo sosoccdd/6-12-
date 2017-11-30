@@ -66,18 +66,6 @@ public class WorkNetV {
 
 				jframe.setVisible(false);
 				new HambergerV();
-//				Timer t = new Timer();
-//				HambergerV ss = new HambergerV();
-//				TimerTask time = new TimerTask() {
-//					
-//					@Override
-//					public void run() {
-//						ss.frame();
-//						
-//					}
-//				};
-//				t.schedule(time, time1);
-				
 
 			}
 

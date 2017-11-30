@@ -26,13 +26,13 @@ public class CrushCarV extends JFrame{
       
       
       
+      
       frame.setLayout(null);
       frame.setLocationRelativeTo(null);
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       frame.setVisible(true);
       
-
-      
+     
       try
       {
          AudioInputStream backmusic = AudioSystem.getAudioInputStream(new File("Sound\\sd3-306.wav"));

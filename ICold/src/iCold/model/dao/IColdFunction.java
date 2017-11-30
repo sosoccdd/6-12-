@@ -11,6 +11,19 @@ public class IColdFunction {
 
 	public IColdFunction() {}
 	
+	public void reset() {
+		try (BufferedWriter bw = new BufferedWriter(new FileWriter("information.txt"))){
+			bw.write(0);
+			bw.newLine();
+			bw.write("0");
+			bw.newLine();
+			bw.write("0");
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
 	public String nameDisplay() {
 		String name = null;
 		try (BufferedReader br = new BufferedReader(new FileReader("Information.txt"))) {
@@ -105,7 +118,7 @@ public class IColdFunction {
 			bw.close();//파일에 백업용 coin정보와 추가된 옷 정보 덮어쓰기
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			e.printStackTrace(); 
 		}
 
 	}
