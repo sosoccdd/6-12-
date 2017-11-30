@@ -39,7 +39,7 @@ public class CrushCarV   {
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       frame.setVisible(true);
       
-      contentPane
+     // contentPane
       
       try
       {
