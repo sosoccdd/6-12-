@@ -26,14 +26,15 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class FoodFighterV extends JFrame {
+public class FoodFighterV extends JFrame{
 
-	IColdFunction i;
+	IColdFunction i; 
 	JPanel panel1;
 	JPanel panel2;
 	JPanel panel3;
+	JLabel dish;
 	CardLayout card;
-	int ctn = 0;
+	int ctn = 1;
 
 	public FoodFighterV() {
 		i = new IColdFunction();
@@ -57,12 +58,15 @@ public class FoodFighterV extends JFrame {
 		getContentPane().add("one", panel1);
 		getContentPane().add("two", panel2);
 		getContentPane().add("three", panel3);
+		
 
 	}
 
 	class panel1 extends JPanel implements MouseListener {
 		private JLabel img1;
 		private FoodFighterV l;
+		public JLabel dish;
+		private int num = 1;
 
 		panel1(FoodFighterV l) {
 			this.l = l;
@@ -76,21 +80,33 @@ public class FoodFighterV extends JFrame {
 			repaint();
 
 			addMouseListener(this);
+			
+			
 
 		}
 
 		@Override
 		public void mouseClicked(MouseEvent e) {
-			this.setVisible(false);
+			//this.setVisible(false);
 			l.card.show(l.getContentPane(), "two");
 			l.ctn += 1;
 
-			if (l.ctn > 30) {
+			if (l.ctn > 50) {
 				this.setVisible(false);
 				l.card.show(l.getContentPane(), "three");
 				l.ctn = 0;
 				i.addCoin(3);
 			}
+			
+			if(ctn%5==0) {
+				dish = new JLabel(new ImageIcon("image/그림31.png"));
+				dish.setBounds(300,300-(num++*20),200,200);
+				repaint();
+				add(dish);
+			}
+			
+			
+		
 
 		}
 
@@ -122,6 +138,8 @@ public class FoodFighterV extends JFrame {
 	class panel2 extends JPanel implements MouseListener {
 		private JLabel img1;
 		private FoodFighterV l;
+		public JLabel dish;
+		private int num=1;
 
 		panel2(FoodFighterV l) {
 			this.l = l;
@@ -134,22 +152,31 @@ public class FoodFighterV extends JFrame {
 			repaint();
 
 			addMouseListener(this);
-
+			
+			
 		}
 
 		@Override
 		public void mouseClicked(MouseEvent e) {
-			this.setVisible(false);
+			//this.setVisible(false);
 			l.card.show(l.getContentPane(), "one");
 			l.ctn += 1;
 
-			if (l.ctn > 30) {
+			if (l.ctn > 50) {
 				this.setVisible(false);
 				l.card.show(l.getContentPane(), "three");
 				l.ctn = 0;
 				i.addCoin(3);
 			}
-
+			
+			if(ctn%5==0) {
+				dish = new JLabel(new ImageIcon("image/그림31.png"));
+				dish.setBounds(300,300-(num++*20),200,200);
+				repaint();
+				add(dish);
+			}
+			
+			
 		}
 
 		@Override
