@@ -72,12 +72,20 @@ public class GasTimer extends Thread{
 	@Override
 	public void run(){		
 
+
 		GasPanel gp = new GasPanel();
 		//gp.timelable();
 
 
 
-		for(int i = 60; i >= 0; i--){
+
+		
+	/*	JPanel dia = new JPanel();
+		dia.setSize(300, 300);
+		dia.setLocation(300, 300);
+		*/
+		
+		for(int i = 100; i >= 0; i--){
 			try {
 				System.out.println(i);
 				//time.setLocation((point.x-(i*10)), 20);
