@@ -72,6 +72,7 @@ public void Hamberger()  {
 
 		bg = new ImageIcon("image\\∏ﬁ¿Œ2.png");
 		
+		
 		panel = new JPanel() {
 			
 			public void paintComponent(Graphics g) {
