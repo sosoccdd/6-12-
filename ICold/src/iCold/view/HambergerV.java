@@ -2,7 +2,9 @@ package iCold.view;
 
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Frame;
 import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,6 +13,7 @@ import java.util.TimerTask;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -18,9 +21,11 @@ import javax.swing.JPanel;
 import iCold.model.dao.IColdFunction;
 
 public class HambergerV extends JFrame {
+	
+	
 	IColdFunction function = new IColdFunction();
 	JFrame jframe = new JFrame("햄버거");
-	int time1 = 10000;
+	int time1 = 20000;
 	int coin;
 	int a = 0;
 	int x = 0;
@@ -34,10 +39,13 @@ public class HambergerV extends JFrame {
 	int solve = 0;
 	ImageIcon icon[];
 	ImageIcon ordericon[];
+	ImageIcon bg;
 	JLabel bl[];
 	JButton bt[];
 	JLabel label[];
-	//백그라운드 이미지 삽입할 메소드에 이름없는 클래스 구현
+	ImageIcon menual;
+	JLabel menual1;
+	JPanel panel;
 public HambergerV() {
 	Hamberger();
 	Timer t = new Timer();
@@ -54,16 +62,33 @@ public HambergerV() {
 	
 }
 
-	
 
-public void Hamberger(){
+public void Hamberger()  {
 		jframe.setBounds(1000, 1000, 1000, 700);
 		jframe.getContentPane().setLayout(null);
 		Dimension frameSize = jframe.getSize();
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		jframe.setLocation((screenSize.width - frameSize.width)/2, (screenSize.height - frameSize.height)/2);
 
-	
+		bg = new ImageIcon("image\\메인2.png");
+		
+		panel = new JPanel() {
+			
+			public void paintComponent(Graphics g) {
+				g.drawImage(bg.getImage(), 0, 0, null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
+		
+		panel.setLayout(null);
+		panel.setSize(1000,700);
+		panel.setLocation(0,0);
+		
+		
+		jframe.add(panel);
+		
+		//재료아이콘
 		
 		icon = new ImageIcon[8];
 		icon[0] = new ImageIcon("image\\그림49.png");
@@ -74,7 +99,7 @@ public void Hamberger(){
 		icon[5] = new ImageIcon("image\\그림45.png");
 		icon[6] = new ImageIcon("image\\그림44.png");
 		icon[7] = new ImageIcon("image\\그림43.png");
-
+		//오더메뉴아이콘
 		ordericon = new ImageIcon[8];
 		ordericon[0] = new ImageIcon("image\\오더1.png");
 		ordericon[1] = new ImageIcon("image\\오더2.png");
@@ -84,7 +109,15 @@ public void Hamberger(){
 		ordericon[5] = new ImageIcon("image\\오더6.png");
 		ordericon[6] = new ImageIcon("image\\오더7.png");
 		ordericon[7] = new ImageIcon("image\\오더8.png");
-
+		//게임메뉴얼 라벨,아이콘
+		menual = new ImageIcon("image\\메뉴얼.png");
+		menual1 = new JLabel(menual);
+		
+		menual1.setSize(384,75);
+		menual1.setLocation(340, 0);
+		
+		panel.add(menual1);
+		
 		bl = new JLabel[8];
 
 		for (int i = 0; i < 8; i++) {
@@ -94,7 +127,7 @@ public void Hamberger(){
 			bl[i].setSize(200, 700);
 
 		}
-		jframe.add(bl[(int) (Math.random() * 7)]);
+		panel.add(bl[(int) (Math.random() * 7)]);
 		bt = new JButton[8];
 
 		for (int i = 0; i < 8; i++) {
@@ -103,7 +136,7 @@ public void Hamberger(){
 		for (int i = 0; i < 8; i++) {
 			bt[i].setSize(150, 100);
 
-			jframe.add(bt[i]);
+			panel.add(bt[i]);
 		}
 
 		bt[0].setIcon(icon[0]);
@@ -127,19 +160,20 @@ public void Hamberger(){
 
 		for (int i = 0; i < 8; i++) {
 			label[i] = new JLabel();
+			label[i].setSize(190,100);
 		}
 
-		label[0].setBounds(400, 100, 900, 900);
-		label[1].setBounds(400, 100, 900, 800);
-		label[2].setBounds(400, 100, 900, 700);
-		label[3].setBounds(400, 100, 900, 600);
-		label[4].setBounds(400, 100, 900, 500);
-		label[5].setBounds(400, 100, 900, 400);
-		label[6].setBounds(400, 100, 900, 300);
-		label[7].setBounds(400, 100, 900, 200);
-
+		label[0].setLocation(470, 550);
+		label[1].setLocation(470, 505);
+		label[2].setLocation(470, 460);
+		label[3].setLocation(470, 415);
+		label[4].setLocation(470, 370);
+		label[5].setLocation(470, 325);
+		label[6].setLocation(470, 280);
+		label[7].setLocation(470, 235);
+		
 		for (int i = 0; i < 8; i++) {
-			jframe.add(label[i]);
+			panel.add(label[i]);
 		}
 
 		bt[0].addActionListener(new ActionListener() {
@@ -248,10 +282,10 @@ public void Hamberger(){
 					System.out.println("성공"+getCoin());
 		
 					for (int i = 0; i < 8; i++) {
-						jframe.remove(label[i]);
+						panel.remove(label[i]);
 						
 					}
-					jframe.setVisible(false);
+					panel.setVisible(false);
 					Hamberger();
 				}else if (solve == answer2) {
 					setCoin(getCoin()+1);
@@ -259,10 +293,10 @@ public void Hamberger(){
 					setSolve(0);
 					System.out.println("성공"+getCoin());
 					for (int i = 0; i < 8; i++) {
-						jframe.remove(label[i]);
+						panel.remove(label[i]);
 						
 					}
-					jframe.setVisible(false);
+					panel.setVisible(false);
 					Hamberger();
 				}else if (solve == answer3) {
 				
@@ -271,10 +305,10 @@ public void Hamberger(){
 					setSolve(0);
 					System.out.println("성공"+getCoin());
 					for (int i = 0; i < 8; i++) {
-						jframe.remove(label[i]);
+						panel.remove(label[i]);
 						
 					}
-					jframe.setVisible(false);
+					panel.setVisible(false);
 					Hamberger();
 				}else if (solve == answer4) {
 					setCoin(getCoin()+1);
@@ -282,10 +316,10 @@ public void Hamberger(){
 					setSolve(0);
 					System.out.println("성공"+getCoin());
 					for (int i = 0; i < 8; i++) {
-						jframe.remove(label[i]);
+						panel.remove(label[i]);
 						
 					}
-					jframe.setVisible(false);
+					panel.setVisible(false);
 					Hamberger();
 				}else if (solve == answer5) {
 					setCoin(getCoin()+1);
@@ -293,10 +327,10 @@ public void Hamberger(){
 					setSolve(0);
 					System.out.println("성공"+getCoin());
 					for (int i = 0; i < 8; i++) {
-						jframe.remove(label[i]);
+						panel.remove(label[i]);
 						
 					}
-					jframe.setVisible(false);
+					panel.setVisible(false);
 
 					Hamberger();
 				}else if (solve == answer6) {
@@ -305,10 +339,10 @@ public void Hamberger(){
 					setSolve(0);
 					System.out.println("성공"+getCoin());
 					for (int i = 0; i < 8; i++) {
-						jframe.remove(label[i]);
+						panel.remove(label[i]);
 						
 					}
-					jframe.setVisible(false);
+					panel.setVisible(false);
 					Hamberger();
 
 				}else if (solve == answer7) {
@@ -317,25 +351,25 @@ public void Hamberger(){
 					setSolve(0);
 					System.out.println("성공"+getCoin());
 					for (int i = 0; i < 8; i++) {
-						jframe.remove(label[i]);
+						panel.remove(label[i]);
 						
 					}
-					jframe.setVisible(false);
+					panel.setVisible(false);
 					Hamberger();
 				}else {					
 					setX(0);
 					setSolve(0);
 					System.out.println("실패"+getCoin());
 					for (int i = 0; i < 8; i++) {
-						jframe.remove(label[i]);
+						panel.remove(label[i]);
 						
 					}
-					jframe.setVisible(false);
+					panel.setVisible(false);
 					Hamberger();
 				}
 			}
 		});
-		jframe.add(resetbt);
+		panel.add(resetbt);
 		
 
 		jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -359,7 +393,8 @@ public void Hamberger(){
 	public int getSolve() {
 		return solve;
 	}
-	public void frame(){
+	public void frame() {
+	
 		jframe.setVisible(false);
 		JFrame jframe2 = new JFrame("햄버거 결과");
 		
@@ -392,9 +427,11 @@ public void Hamberger(){
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
+				
 				jframe2.setVisible(false);
 				new WorkNetV();
 
+				
 			}
 		});
 		jframe2.getContentPane().add(TitleLabel);
@@ -403,10 +440,10 @@ public void Hamberger(){
 		jframe2.getContentPane().add(Worknet);
 		jframe2.setVisible(true);
 		jframe2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		
 	}
-
-
 
 }
 
-// 1. 햄버거 프레임 안꺼짐                                                2. 시간지나면 고용노동부프레임 반복 나옴 .
+
