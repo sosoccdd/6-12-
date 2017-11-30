@@ -1,5 +1,8 @@
 package iCold.view;
 
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -21,13 +24,16 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import iCold.model.dao.IColdFunction;
 import iCold.model.vo.CrushCarM;
 
 
-public class CrushCarV   {
+public class CrushCarV extends JFrame{
+	//IColdFunction function = new IColdFunction();
+	public static JFrame frame = new JFrame("Crush car");
+	public static Clip clip;
    public CrushCarV() {
       
-      JFrame frame = new JFrame("Crush car");
       frame.setContentPane(new CrushCarM());
       frame.pack();
       frame.add(CrushCarM.label);
@@ -39,13 +45,13 @@ public class CrushCarV   {
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       frame.setVisible(true);
       
-      contentPane
+
       
       try
       {
-         AudioInputStream backmusic = AudioSystem.getAudioInputStream(new File("Sound\\sd3-315.wav"));
+         AudioInputStream backmusic = AudioSystem.getAudioInputStream(new File("Sound\\sd3-306.wav"));
 //       AudioInputStream punchSound = AudioSystem.getAudioInputStream(new File("Sound\\Å¸°ÝÀ½_Çª¾ï.wav"));
-         Clip clip = AudioSystem.getClip();
+         clip = AudioSystem.getClip();
          clip.stop();
          clip.open(backmusic);
 //   clip.open(punchSound);
@@ -58,4 +64,5 @@ public class CrushCarV   {
       
       
    }
+
 }
