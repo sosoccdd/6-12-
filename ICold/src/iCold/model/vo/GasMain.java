@@ -5,7 +5,7 @@ import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 
-import iCold.view.ChangePanel;
+
 import iCold.view.GasBack;
 
 public class GasMain extends JFrame{

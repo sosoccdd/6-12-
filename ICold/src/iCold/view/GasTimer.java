@@ -19,7 +19,7 @@ public class GasTimer extends Thread{
 	JFrame jr;
 	JPanel panel;
 	JLabel time;
-	ChangePanel p;
+	//ChangePanel p;
 	ImageIcon icon;
 
 /*	Timer mTimer = new Timer();
