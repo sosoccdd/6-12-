@@ -74,12 +74,12 @@ public class CrushCarM extends JPanel implements KeyListener, ActionListener {
     
        mTimer.start();
        
-       images[0]=new ImageIcon("Image\\destroy1.png");
-       images[1]=new ImageIcon("Image\\destroy2.png");
-       images[2]=new ImageIcon("Image\\destroy3.png");
-       images[3]=new ImageIcon("Image\\destroy4.png");
-       images[4]=new ImageIcon("Image\\destroy5.png");
-       images[5]=new ImageIcon("Image\\destroy6.png");
+       images[0]=new ImageIcon("image\\destroy1.png");
+       images[1]=new ImageIcon("image\\destroy2.png");
+       images[2]=new ImageIcon("image\\destroy3.png");
+       images[3]=new ImageIcon("image\\destroy4.png");
+       images[4]=new ImageIcon("image\\destroy5.png");
+       images[5]=new ImageIcon("image\\destroy6.png");
     
        
 

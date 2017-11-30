@@ -19,9 +19,9 @@ public class GasBack extends JPanel{
 		this.panel.add(background);*/
 		
 		
-		
 		GasPanel gp = new GasPanel(jr);
 		GasTimer timer = new GasTimer(jr, gp);
+		//jr.setContentPane(timer);
 		Thread t1 = timer;
 		t1.start();
 		

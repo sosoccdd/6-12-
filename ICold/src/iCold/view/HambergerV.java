@@ -2,7 +2,7 @@ package iCold.view;
 
 import java.awt.Dimension;
 import java.awt.Font;
-
+import java.awt.Graphics;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,13 +13,16 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-
+import javax.swing.JPanel;
 
 import iCold.model.dao.IColdFunction;
 
 public class HambergerV extends JFrame {
 	IColdFunction function = new IColdFunction();
 	JFrame jframe = new JFrame("햄버거");
+	int time1 = 10000;
+	int coin;
+	int a = 0;
 	int x = 0;
 	int answer = 464;// 4까지 곱하고 5 6 7 더하고 8 곱
 	int answer2 = 336;
@@ -34,32 +37,34 @@ public class HambergerV extends JFrame {
 	JLabel bl[];
 	JButton bt[];
 	JLabel label[];
+	//백그라운드 이미지 삽입할 메소드에 이름없는 클래스 구현
+public HambergerV() {
+	Hamberger();
+	Timer t = new Timer();
+	TimerTask time = new TimerTask() {
+		
+		@Override
+		public void run() {
+			frame();
+			
+		}
+	};
+	t.schedule(time, time1);
+	setVisible(false);
+	
+}
 
-	int time1 = 10000;
+	
 
-
-	int coin = 0;
-	int a = 0;
-	Timer t;
-	public HambergerV() {
-
+public void Hamberger(){
 		jframe.setBounds(1000, 1000, 1000, 700);
 		jframe.getContentPane().setLayout(null);
 		Dimension frameSize = jframe.getSize();
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		jframe.setLocation((screenSize.width - frameSize.width)/2, (screenSize.height - frameSize.height)/2);
 
-		t = new Timer();
-		TimerTask time = new TimerTask() {
-
-			@Override
-			public void run() {
-				jframe.setVisible(false);
-				frame();
-
-			}
-		};
-		t.schedule(time, time1);
+	
+		
 		icon = new ImageIcon[8];
 		icon[0] = new ImageIcon("image\\그림49.png");
 		icon[1] = new ImageIcon("image\\그림50.png");
@@ -137,18 +142,14 @@ public class HambergerV extends JFrame {
 			jframe.add(label[i]);
 		}
 
-
-
-		// while(coin<30) {
-
 		bt[0].addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 
 				label[x].setIcon(bt[0].getIcon());
-				x++;
-				solve = solve + 1;
+				setX(getX()+1);
+				setSolve(getSolve()+1);
 
 			}
 		});
@@ -159,8 +160,8 @@ public class HambergerV extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 
 				label[x].setIcon(bt[1].getIcon());
-				x++;
-				solve = solve * 2;
+				setX(getX()+1);
+				setSolve(getSolve()*2);
 
 			}
 		});
@@ -171,8 +172,8 @@ public class HambergerV extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				System.out.println(x);
 				label[x].setIcon(bt[2].getIcon());
-				x++;
-				solve = solve * 3;
+				setX(getX()+1);
+				setSolve(getSolve()*3);
 
 			}
 		});
@@ -182,8 +183,8 @@ public class HambergerV extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 
 				label[x].setIcon(bt[3].getIcon());
-				x++;
-				solve = solve * 4;
+				setX(getX()+1);
+				setSolve(getSolve()*4);
 
 			}
 		});
@@ -193,8 +194,8 @@ public class HambergerV extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 
 				label[x].setIcon(bt[4].getIcon());
-				x++;
-				solve = solve + 5;
+				setX(getX()+1);
+				setSolve(getSolve()+5);
 
 			}
 		});
@@ -204,8 +205,8 @@ public class HambergerV extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 
 				label[x].setIcon(bt[5].getIcon());
-				x++;
-				solve = solve + 6;
+				setX(getX()+1);
+				setSolve(getSolve()+6);
 
 			}
 		});
@@ -215,8 +216,8 @@ public class HambergerV extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 
 				label[x].setIcon(bt[6].getIcon());
-				x++;
-				solve = solve + 7;
+				setX(getX()+1);
+				setSolve(getSolve()+7);
 
 			}
 		});
@@ -227,8 +228,8 @@ public class HambergerV extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 
 				label[x].setIcon(bt[7].getIcon());
-				x++;
-				solve = solve * 8;
+				setX(getX()+1);
+				setSolve(getSolve()*8);
 
 			}
 		});
@@ -241,76 +242,133 @@ public class HambergerV extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 
 				if (solve == answer) {
-					a+=1;
-					coin+=1;
-					setCoin(a);
+					setCoin(getCoin()+1);
+					setX(0);
+					setSolve(0);
+					System.out.println("성공"+getCoin());
+		
+					for (int i = 0; i < 8; i++) {
+						jframe.remove(label[i]);
+						
+					}
 					jframe.setVisible(false);
-					new HambergerV();
+					Hamberger();
 				}else if (solve == answer2) {
-					a+=1;
-					coin+=1;
-					setCoin(a);
+					setCoin(getCoin()+1);
+					setX(0);
+					setSolve(0);
+					System.out.println("성공"+getCoin());
+					for (int i = 0; i < 8; i++) {
+						jframe.remove(label[i]);
+						
+					}
 					jframe.setVisible(false);
-					new HambergerV();
+					Hamberger();
 				}else if (solve == answer3) {
-					a+=1;
-					coin+=1;
-					setCoin(a);
+				
+					setCoin(getCoin()+1);
+					setX(0);
+					setSolve(0);
+					System.out.println("성공"+getCoin());
+					for (int i = 0; i < 8; i++) {
+						jframe.remove(label[i]);
+						
+					}
 					jframe.setVisible(false);
-					new HambergerV();
+					Hamberger();
 				}else if (solve == answer4) {
-					a+=1;
-					coin+=1;
-					setCoin(a);
+					setCoin(getCoin()+1);
+					setX(0);
+					setSolve(0);
+					System.out.println("성공"+getCoin());
+					for (int i = 0; i < 8; i++) {
+						jframe.remove(label[i]);
+						
+					}
 					jframe.setVisible(false);
-					new HambergerV();
+					Hamberger();
 				}else if (solve == answer5) {
-					a+=1;
-					coin+=1;
-					setCoin(a);
+					setCoin(getCoin()+1);
+					setX(0);
+					setSolve(0);
+					System.out.println("성공"+getCoin());
+					for (int i = 0; i < 8; i++) {
+						jframe.remove(label[i]);
+						
+					}
 					jframe.setVisible(false);
-					new HambergerV();
+
+					Hamberger();
 				}else if (solve == answer6) {
-					a+=1;
-					coin+=1;
-					setCoin(a);
+					setCoin(getCoin()+1);
+					setX(0);
+					setSolve(0);
+					System.out.println("성공"+getCoin());
+					for (int i = 0; i < 8; i++) {
+						jframe.remove(label[i]);
+						
+					}
 					jframe.setVisible(false);
-					new HambergerV();
+					Hamberger();
 
 				}else if (solve == answer7) {
-					a+=1;
-					coin+=1;
-					setCoin(a);
+					setCoin(getCoin()+1);
+					setX(0);
+					setSolve(0);
+					System.out.println("성공"+getCoin());
+					for (int i = 0; i < 8; i++) {
+						jframe.remove(label[i]);
+						
+					}
 					jframe.setVisible(false);
-					new HambergerV();
-				}else {
+					Hamberger();
+				}else {					
+					setX(0);
+					setSolve(0);
+					System.out.println("실패"+getCoin());
+					for (int i = 0; i < 8; i++) {
+						jframe.remove(label[i]);
+						
+					}
 					jframe.setVisible(false);
-					new HambergerV();
+					Hamberger();
 				}
 			}
 		});
 		jframe.add(resetbt);
 		
+
 		jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		jframe.setVisible(true);
-
 	}
-
 	public void setCoin(int coin) {
 		this.coin = coin;
 	}
 	public int getCoin() {
 		return coin;
 	}
+	public void setX(int x) {
+		this.x = x;
+	}
+	public int getX() {
+		return x;
+	}
+	public void setSolve(int solve) {
+		this.solve = solve;
+	}
+	public int getSolve() {
+		return solve;
+	}
 	public void frame(){
+		jframe.setVisible(false);
 		JFrame jframe2 = new JFrame("햄버거 결과");
+		
 		jframe2.setBounds(1000, 1000, 1000, 700);
 		jframe2.setLayout(null);
 		Dimension frameSize = jframe2.getSize();
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		jframe2.setLocation((screenSize.width - frameSize.width)/2, (screenSize.height - frameSize.height)/2);
-
-
+		
 		JLabel TitleLabel = new JLabel("햄버거 게임 결과");
 		TitleLabel.setFont(new Font("굴림", Font.BOLD, 50));
 		TitleLabel.setLocation(158, 104);
@@ -334,7 +392,6 @@ public class HambergerV extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				jframe.setVisible(false);
 				jframe2.setVisible(false);
 				new WorkNetV();
 
@@ -352,4 +409,4 @@ public class HambergerV extends JFrame {
 
 }
 
-
+// 1. 햄버거 프레임 안꺼짐                                                2. 시간지나면 고용노동부프레임 반복 나옴 .
