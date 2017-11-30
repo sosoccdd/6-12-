@@ -39,7 +39,7 @@ public class ClothRoomV extends JComponent implements MouseListener, MouseMotion
 	IColdFunction function = new IColdFunction();
 	JLabel cloth[] = new JLabel[6];
 	int what=-1;
-
+	
 	class cloth1 extends JLabel{
 		
 		JLabel cloth1;
