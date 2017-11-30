@@ -57,11 +57,6 @@ public class EndingStoryV extends JFrame{
 						e.printStackTrace();
 					}
 					cr.setVisible(false);
-					
-					
-					
-					//setVisible(false);
-					//new IColdStartV();
 				}
 				
 			};
