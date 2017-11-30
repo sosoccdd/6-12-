@@ -46,6 +46,7 @@ public class GasPanel extends JPanel{
 	int mTime = 1000;
 	
 	
+	
 	public GasPanel(){}
 	
 	
