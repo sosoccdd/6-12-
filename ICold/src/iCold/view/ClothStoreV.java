@@ -75,7 +75,7 @@ public class ClothStoreV extends JFrame{
 		clotharr[1] = new ClothStoreM("외출복", 2, '2');
 		clotharr[2] = new ClothStoreM("체크드레스", 3, '3');
 		clotharr[3] = new ClothStoreM("면접복장", 4, '4');
-		clotharr[4] = new ClothStoreM("옷5", 5, '5');
+		clotharr[4] = new ClothStoreM("상큼발랄", 5, '5');
 
 		ImageIcon images[] = new ImageIcon[5];
 		images[0] = new ImageIcon("image\\옷1.png");
@@ -87,7 +87,7 @@ public class ClothStoreV extends JFrame{
 		JLabel clothLabel = new JLabel("옷 이름 : "+clotharr[0].getList()+"   코인 : "+clotharr[0].getPay()+"개");
 		clothLabel.setFont(new Font("굴림", Font.BOLD, 20));
 		clothLabel.setLocation(552, 480);
-		clothLabel.setSize(319, 25);
+		clothLabel.setSize(350, 25);
 
 
 		JLabel clothImages = new JLabel();
