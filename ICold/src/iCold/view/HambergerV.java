@@ -270,7 +270,6 @@ public class HambergerV extends JFrame {
 					setCoin(a);
 					jframe.setVisible(false);
 					new HambergerV();
-
 				}else if (solve == answer6) {
 					a+=1;
 					coin+=1;
