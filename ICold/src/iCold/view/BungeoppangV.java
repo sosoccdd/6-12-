@@ -709,8 +709,8 @@ public class BungeoppangV extends JFrame{
 
 		JLabel coinLabel = new JLabel("»πµÊƒ⁄¿Œ : " + count + "  ∞≥");
 		coinLabel.setFont(new Font("±º∏≤", Font.BOLD, 40));
-		coinLabel.setLocation(119, 69);
-		coinLabel.setSize(327, 75);
+		coinLabel.setLocation(77, 69);
+		coinLabel.setSize(379, 75);
 
 
 		ImageIcon pipi = new ImageIcon("image\\aa.png");
@@ -865,7 +865,7 @@ public class BungeoppangV extends JFrame{
 		lblNewLabel = new JLabel(coin+" ∞≥ ");
 		lblNewLabel.setIcon(bung);
 		lblNewLabel.setFont(new Font("±º∏≤", Font.BOLD, 40));
-		lblNewLabel.setBounds(661, 474, 260, 123);
+		lblNewLabel.setBounds(632, 474, 301, 123);
 
 		for (int i = 0; i < bnt.length; i++) {
 			jframe.getContentPane().add(bnt[i]);

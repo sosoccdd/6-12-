@@ -33,11 +33,13 @@ public class CrushCarV   {
       frame.add(CrushCarM.label);
       
       
+      
       frame.setLayout(null);
       frame.setLocationRelativeTo(null);
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       frame.setVisible(true);
       
+      contentPane
       
       try
       {

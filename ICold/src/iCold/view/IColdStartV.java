@@ -14,9 +14,12 @@ import java.awt.Color;
 import java.awt.SystemColor;
 import javax.swing.UIManager;
 
+import iCold.model.dao.IColdFunction;
+
 public class IColdStartV {
 
 	public IColdStartV(){
+		IColdFunction function = new IColdFunction();
 		JFrame jframe = new JFrame("ICold Start");
 		jframe.getContentPane().setBackground(Color.getHSBColor(10, 123, 23));
 		jframe.setBounds(1000, 1000, 1000, 700);
@@ -40,6 +43,8 @@ public class IColdStartV {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				jframe.setVisible(false);
+				function.reset();
+				
 				new SelectGenderV();
 			}
 		});
