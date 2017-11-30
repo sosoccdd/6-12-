@@ -231,9 +231,7 @@ public class EndingStoryV extends JFrame{
 			add(show);
 			setVisible(true);
 		}
-		
-		
-		
+				
 	}
 }
 	

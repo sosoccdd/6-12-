@@ -399,4 +399,5 @@ public class ClothRoomV extends JComponent implements MouseListener, MouseMotion
 		// TODO Auto-generated method stub
 		
 	}
+	
 }
