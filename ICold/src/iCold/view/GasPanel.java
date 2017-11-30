@@ -2,6 +2,7 @@ package iCold.view;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -18,7 +19,7 @@ public class GasPanel extends JPanel{
 
 	JFrame jr;
 	JPanel mainpanel;
-
+	Graphics g;
 	JLabel sonlabel;
 	JLabel oillabel;
 	JLabel allabel;
@@ -42,20 +43,45 @@ public class GasPanel extends JPanel{
 	ImageIcon alget = new ImageIcon("image\\money_get.png");
 	ImageIcon  oil[];
 	ImageIcon coin = new ImageIcon("image\\coin1.png");
+
+	ImageIcon icon = new ImageIcon("image\\timerim");
+	JLabel time;
+
 	ImageIcon view = new ImageIcon("image\\°ÔÀÓ¼³¸í2.png");
+
 	int mTime = 1000;
-	
-	
-	
+
 	public GasPanel(){}
-	
-	
+
+
+
 	public GasPanel(JFrame jr){
 		this.jr = jr;
 		mainpanel = new JPanel();
+		
+		mainpanel.setVisible(true);
 		mainpanel.setLayout(null);
 		mainpanel.setLocation(0, 0);
 		mainpanel.setSize(1000, 700);
+		
+
+		
+		
+		
+		
+		
+		/*g= this.getGraphics();
+		g.drawRect(10, 120, 300, 400);*/
+		
+
+		//paint();
+		/*ImageIcon icon = new ImageIcon("image\\timerim");
+		time = new JLabel(icon);
+		time.setSize(150, 150);
+		time.setLocation(600, 20);
+		mainpanel.add(time);*/
+
+
 
 		/*JPanel background = new JPanel(){
 			public void paintComponent(Graphics g){
@@ -64,23 +90,31 @@ public class GasPanel extends JPanel{
 				super.paintComponent(g);
 			}
 		};
-		
-*/		
+
+		 */		
 		//background();
-		
+
 		/*ImageIcon timegage = new ImageIcon("image\\timegage");
 		time = new JLabel(timegage);
 		time.setSize(900, 600);
 		time.setLocation(10, 10);
-		
+
 		panel.add(time);
-		*/
-		
+
+		 */
+
+
+
+
+
+
+
 		 
 		
 		
 		
 		sulmyung();
+
 		sonLabel();
 		oilLabel();
 		alLabel();
@@ -221,11 +255,17 @@ public class GasPanel extends JPanel{
 				jr.revalidate();             //JPanel ¸®ÇÁ·¹½Ã
 				jr.repaint();
 				gagecount = 0;
+
+
+				//				coincount+=50;
+
+
 				
 //				coincount+=50;
 				a+=1;
+
 				setCoincount(a);
-	//			System.out.println("È¹µæ ±Ý¾× : " + coincount);
+				//			System.out.println("È¹µæ ±Ý¾× : " + coincount);
 				sonlabel.setLocation(500, 220);
 				int ran = (int) (Math.random()*4+1);
 				System.out.println("·£´ý°ª : " + ran);
@@ -249,6 +289,17 @@ public class GasPanel extends JPanel{
 			}
 		});
 	}
+	
+	@Override
+	public void paint(Graphics g){
+
+		super.paint(g);
+		g.fillRect(20, 30, 100, 200);
+		g.setColor(Color.BLUE);
+		repaint();
+	}
+	
+
 
 	public void sulmyung() {
 		viewlabel = new JLabel(view);
@@ -281,6 +332,20 @@ public class GasPanel extends JPanel{
 		mainpanel.add(sonlabel);		
 	}
 
+	/*public void timelable(){
+
+
+		Point point = time.getLocation();
+
+		for (int j = 600; j <=0; j--) {
+			time.setLocation(point.x-j, point.y);
+			mainpanel.repaint();
+		}		
+
+
+
+	}*/
+
 	public void background(){
 		JPanel backgr = new JPanel(){
 			public void paintComponent(Graphics g){
@@ -288,23 +353,23 @@ public class GasPanel extends JPanel{
 				g.drawImage(batang.getImage(), 0, 0, null);				
 			}
 		};
-		
+
 		mainpanel.add(backgr);
 
 	}
-	
+
 	public void setCoincount(int coincount) {
 		this.coincount = coincount;
 	}
 	public static int getCoincount() {
 		return coincount;
 	}
-	
+
 	public int getCoin(){
 		return this.coincount;
 	}
-	
-	
+
+
 
 
 

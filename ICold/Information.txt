@@ -1,3 +1,7 @@
 1
+<<<<<<< HEAD
 39
+=======
+7
+>>>>>>> branch 'master' of https://github.com/sosoccdd/6-12-.git
 1
