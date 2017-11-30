@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+
+4
+0123
+=======
 1
+<<<<<<< HEAD
 1
-1
+33124
+=======
+8
+33
+>>>>>>> branch 'master' of https://github.com/sosoccdd/6-12-/
+>>>>>>> branch 'master' of https://github.com/sosoccdd/6-12-/

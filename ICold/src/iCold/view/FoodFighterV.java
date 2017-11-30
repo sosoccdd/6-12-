@@ -74,7 +74,8 @@ public class FoodFighterV extends JFrame{
 		setBounds(1000, 1000, 1000, 700);
 		Dimension frameSize = this.getSize();
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-		this.setLocation((screenSize.width - frameSize.width) / 2, (screenSize.height - frameSize.height) / 2);
+		this.setLocation((screenSize.width - frameSize.width) / 2,
+				(screenSize.height - frameSize.height) / 2);
 
 		card = new CardLayout();
 
@@ -185,7 +186,8 @@ public class FoodFighterV extends JFrame{
 		private FoodFighterV l;
 		public JLabel dish;
 		private int num = 1;
-		private Image backgroundI = new ImageIcon("image/그림16.png").getImage().getScaledInstance(990, 660 , 0);
+		private Image backgroundI = new ImageIcon("image/그림16.png").
+				getImage().getScaledInstance(990, 660 , 0);
 		private ImageIcon backgroundIc = new ImageIcon(backgroundI);
 
 		panel1(FoodFighterV l) {
