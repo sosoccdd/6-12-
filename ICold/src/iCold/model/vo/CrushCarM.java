@@ -27,6 +27,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
+import carCrush.Test;
 import iCold.model.dao.IColdFunction;
 import iCold.view.CrushCarV;
 //import iCold.view.CrushCarV;
@@ -75,7 +76,7 @@ public class CrushCarM extends JPanel implements KeyListener, ActionListener {
 		if(mTimer == arg0.getSource())
 		{
 			mTime-=1;
-			System.out.println(mTime);
+//			System.out.println(mTime);
 			for(int i=0 ; i<hp.length; i+=2) {
 				if (hp[i]<0 && hp[i]>-9) {
 					mTime+=520;
@@ -435,56 +436,49 @@ public class CrushCarM extends JPanel implements KeyListener, ActionListener {
 		//    	g.drawImage(background, 200, 500, null);
 		//    	setOpaque(false);
 		//        g.fillRect(0, 300, 1000, 600);
-		g.drawImage(man, manBasicPosition.x - man.getWidth(this)/ 2, manBasicPosition.y - man.getHeight(this) / 2, this);
-
-
-		if(manBasicPosition.x>470&& manBasicPosition.x<800 && punch==1 &&right==0)
-		{
-			g.drawImage(effect, 610, 300, this);
-			g.drawImage(effect, 670, 350, this);
-			g.drawImage(effect, manBasicPosition.x +100/ 2, 345, this  );
-		}
-
-
-		for(int i =0 ; i<30; i+=2) {
-
-			hp[i]--;
-			if(hp[i]<=0) {
-
-				hp[i+2]--;
-
-			}
-
-		}
-
-		for(int i =1 ; i<30; i+=2) {
-			hp[i]-=3;
-			if(hp[i]<=0) {
-				hp[i+2]-=3;
-			}
-		}
-
-		if(manBasicPosition.x>=600&& manBasicPosition.x<860 && punch==1 &&right==1)
-		{g.drawImage(effect, manBasicPosition.x -150/ 2, 345, this  );
-
-		for(int i =0 ; i<30; i+=2) {
-			hp[i]-=3;
-			if(hp[i]<=0 ) { 
-				hp[i+2]-=3;
-			}
-		}
-
-		for(int i =1 ; i<30; i+=2) {
-
-			hp[i]--;
-			if(hp[i]<=0 ) {
-				hp[i+2]--;
-			}
-
-		}
-		}
-	}
-
+		  g.drawImage(man, manBasicPosition.x - man.getWidth(this)/ 2, manBasicPosition.y - man.getHeight(this) / 2, this);
+	      
+	        
+	        if(manBasicPosition.x>470&& manBasicPosition.x<800 && punch==1 &&right==0){
+	        	g.drawImage(effect, 610, 300, this);
+	        	g.drawImage(effect, 670, 350, this);
+	        	g.drawImage(effect, manBasicPosition.x +100/ 2, 345, this  );
+	        	hp[0]--;
+	        	
+	        		for(int i =1 ; i<hp.length-2; i+=2) {
+	            		if(hp[i]<=0) 
+	            		hp[i+1]--;
+	            		}
+	            	}
+	        					
+	        		for(int i =0 ; i<hp.length-1; i+=2) {
+	        			if(hp[i]<=0) 
+	        				hp[i+1]-=3;
+	    		}
+	    	
+	        	
+	        	
+	        if(manBasicPosition.x>=600&& manBasicPosition.x<860 && punch==1 &&right==1)
+	        	{g.drawImage(effect, manBasicPosition.x -150/ 2, 345, this  );
+	        	hp[0]--;
+	        	for(int i =0 ; i<hp.length; i+=2) {
+	        		
+	        		if(hp[i]<=0 ) 
+	        		hp[i+1]-=3;
+	        		}
+	        	}
+	        	for(int i =0 ; i<hp.length; i+=2) {
+	    		
+	        		if(hp[i]<=0 ) 
+	        			hp[i+1]--;
+	    		}
+	    	}
+	        		
+	        	
+	     
+	        
+	        
+	    
 
 
 	public void setCoin(int coin) {
