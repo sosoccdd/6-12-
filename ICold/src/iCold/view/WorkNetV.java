@@ -125,7 +125,7 @@ public class WorkNetV {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				jframe.setVisible(false);
-				new BungeoppangV();
+				new BungsulV();
 
 			}
 
