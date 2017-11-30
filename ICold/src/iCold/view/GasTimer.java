@@ -40,7 +40,7 @@ public class GasTimer extends Thread{
 		dia.setLocation(300, 300);
 		*/
 		
-		for(int i = 60; i >= 0; i--){
+		for(int i = 100; i >= 0; i--){
 			try {
 				System.out.println(i);
 				this.sleep(100);
