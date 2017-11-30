@@ -12,7 +12,10 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-class EndingStoryV extends JFrame{
+public class EndingStoryV extends JFrame{
+	static Timer creditShowT;
+	static TimerTask creditShowTT;
+	
 	public EndingStoryV() {
 	}
 
@@ -34,12 +37,37 @@ class EndingStoryV extends JFrame{
 			TimerTask time = new TimerTask() {		
 				@Override
 				public void run() {
-					setVisible(false);
-					new IColdStartV();		
+				
+					
+					
+					new IColdStartV();
 				}
 			};
 					
-			t.schedule(time, 3000);
+			creditShowT = new Timer();
+			creditShowTT = new TimerTask() {
+
+				@Override
+				public void run() {
+					setVisible(false);
+					credit cr = new credit();
+					try {
+					Thread.sleep(3000);
+					}catch(Exception e) {
+						e.printStackTrace();
+					}
+					cr.setVisible(false);
+					
+					
+					
+					//setVisible(false);
+					//new IColdStartV();
+				}
+				
+			};
+			
+			creditShowT.schedule(creditShowTT, 3000);
+			t.schedule(time, 6000);
 			add(story1);
 			setVisible(true);
 			this.setDefaultCloseOperation((JFrame.EXIT_ON_CLOSE));
@@ -136,7 +164,7 @@ class EndingStoryV extends JFrame{
 		}
 	}
 	
-	static class EndingStoryV5 extends JFrame{
+ static class EndingStoryV5 extends JFrame{
 		JLabel story5;
 		Timer t;
 		EndingStoryV5(){
@@ -198,6 +226,19 @@ class EndingStoryV extends JFrame{
 			setVisible(true);
 			this.setDefaultCloseOperation((JFrame.EXIT_ON_CLOSE));
 		}
+	}
+	
+	static class credit extends JFrame{
+		JLabel show;
+		credit(){
+			show = new JLabel("dfdf");
+			show.setBounds(300,300,200,100);
+			add(show);
+			setVisible(true);
+		}
+		
+		
+		
 	}
 }
 	
