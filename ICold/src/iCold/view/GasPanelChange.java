@@ -2,6 +2,7 @@ package iCold.view;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -55,18 +56,20 @@ public class GasPanelChange extends JFrame{
 		JLabel addlabel = new JLabel("획득 :" + coincount);
 		//에드코인(화ㅣㄱ득코인변수명);
 		icf.addCoin(coincount);
+		addlabel.setFont((new Font("Sanscerif", Font.BOLD, 30)));
 		addlabel.setLocation(200, 100);
 		addlabel.setSize(200, 200);
 
 		
 		JLabel totallabel = new JLabel("합계 : " + icf.coinDisplay());
 		
+		totallabel.setFont((new Font("Sanscerif", Font.BOLD, 30)));
 		totallabel.setLocation(200, 300);
 		totallabel.setSize(200, 200);
 
 		JButton rebutton = new JButton("돌아가기");
+		rebutton.setSize(300, 100);
 		rebutton.setLocation(200, 500);
-		rebutton.setSize(100, 100);
 		
 		rebutton.addActionListener(new ActionListener() {
 			

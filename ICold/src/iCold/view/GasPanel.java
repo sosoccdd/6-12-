@@ -24,6 +24,7 @@ public class GasPanel extends JPanel{
 	JLabel allabel;
 	JLabel gagelabel;
 	JLabel coinlabel;
+	JLabel viewlabel;
 	JLabel backgr;
 	int a=0;
 	int gagecount = 0;
@@ -41,8 +42,9 @@ public class GasPanel extends JPanel{
 	ImageIcon alget = new ImageIcon("image\\money_get.png");
 	ImageIcon  oil[];
 	ImageIcon coin = new ImageIcon("image\\coin1.png");
-
+	ImageIcon view = new ImageIcon("image\\°ÔÀÓ¼³¸í2.png");
 	int mTime = 1000;
+	
 	
 	
 	public GasPanel(){}
@@ -78,7 +80,7 @@ public class GasPanel extends JPanel{
 		
 		
 		
-		
+		sulmyung();
 		sonLabel();
 		oilLabel();
 		alLabel();
@@ -164,7 +166,7 @@ public class GasPanel extends JPanel{
 			public void keyPressed(KeyEvent e) {				
 				if(gagelabel.isVisible()){
 					System.out.println(gagecount);
-					if(e.getKeyChar() == ' '){
+					if(e.getKeyChar()== 'z'){
 						gagecount++;						
 						if(gagecount>4){															
 							if(sonlabel.getIcon()==son1){
@@ -221,7 +223,7 @@ public class GasPanel extends JPanel{
 				gagecount = 0;
 				
 //				coincount+=50;
-				a+=3;
+				a+=1;
 				setCoincount(a);
 	//			System.out.println("È¹µæ ±Ý¾× : " + coincount);
 				sonlabel.setLocation(500, 220);
@@ -247,6 +249,15 @@ public class GasPanel extends JPanel{
 			}
 		});
 	}
+
+	public void sulmyung() {
+		viewlabel = new JLabel(view);
+		viewlabel.setSize(600, 200);
+		viewlabel.setLocation(500, 0);
+		mainpanel.add(viewlabel);		
+		
+	}
+
 
 	public void alLabel() {		
 		allabel = new JLabel(al);

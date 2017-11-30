@@ -297,8 +297,8 @@ public void Hamberger(){
 						
 					}
 					jframe.setVisible(false);
-					Hamberger();
 
+					Hamberger();
 				}else if (solve == answer6) {
 					setCoin(getCoin()+1);
 					setX(0);
