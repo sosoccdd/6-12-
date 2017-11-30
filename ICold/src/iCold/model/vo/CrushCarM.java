@@ -465,7 +465,6 @@ public class CrushCarM extends JPanel implements KeyListener, ActionListener {
 		}
 
 
-
 		if(manBasicPosition.x>=600&& manBasicPosition.x<860 && punch==1 &&right==1)
 		{g.drawImage(effect, manBasicPosition.x -150/ 2, 345, this  );
 
