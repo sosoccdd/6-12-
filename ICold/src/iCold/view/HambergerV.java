@@ -22,7 +22,6 @@ import iCold.model.dao.IColdFunction;
 
 public class HambergerV extends JFrame {
 	
-	
 	IColdFunction function = new IColdFunction();
 	JFrame jframe = new JFrame("ÇÜ¹ö°Å");
 	int time1 = 20000;
