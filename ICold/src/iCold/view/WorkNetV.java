@@ -15,13 +15,14 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 
-import iCold.model.vo.GasOilM;
-import iCold.model.vo.GasOilStart;
+import iCold.model.vo.*;
+
 import iCold.view.*;
-import iCold.view.GasOilV.GasOilM2;
+
+
 
 public class WorkNetV {
-	//GasOilV gasm = new GasOilV();
+	
 	public WorkNetV(){
 		JFrame jframe = new JFrame("WorkNet");
 		jframe.setBounds(1000, 1000, 1000, 700);
@@ -93,13 +94,8 @@ public class WorkNetV {
 			public void actionPerformed(ActionEvent arg0) {
 			
 				jframe.setVisible(false);
-				//GasOilV gas = new GasOilV();
-				GasOilM2 gasv = new GasOilM2();
-				Thread t1 = new Thread(gasv);
-				t1.start();
-				GasOilV.jr.setVisible(false);
-				
-				
+				new GasMain();
+			
 			}
 				
 		});
@@ -134,9 +130,6 @@ public class WorkNetV {
 			}
 
 		});
-		
-
-
 
 		jframe.getContentPane().add(ClothButton);
 		jframe.getContentPane().add(workButton);
@@ -150,13 +143,4 @@ public class WorkNetV {
 		jframe.setVisible(true);
 
 	}
-
-
-
-
-
-
-
-
-
 }
