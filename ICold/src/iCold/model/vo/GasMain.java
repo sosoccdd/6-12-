@@ -29,7 +29,4 @@ public class GasMain extends JFrame{
 	public void changePanel(){
 		//new ChangePanel(jr, panel);
 	}
-	
-	
-
 }
