@@ -164,7 +164,7 @@ public class GasPanel extends JPanel{
 			public void keyPressed(KeyEvent e) {				
 				if(gagelabel.isVisible()){
 					System.out.println(gagecount);
-					if(e.getKeyChar() == ' '){
+					if(e.getKeyChar()== 'z'){
 						gagecount++;						
 						if(gagecount>4){															
 							if(sonlabel.getIcon()==son1){
