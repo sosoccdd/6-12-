@@ -48,38 +48,9 @@ public class CrushCarM extends JPanel implements KeyListener, ActionListener {
 	Timer mTimer = new Timer(50, this);
 	int mTime = 500;
 	int count;
-	static int coin;
+	static int coin = 0;
 
 
-	@Override
-	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
-		if(mTimer == arg0.getSource())
-		{
-			mTime-=1;
-			System.out.println(mTime);
-			for(int i=0 ; i<hp.length; i+=2) {
-				if (hp[i]<0 && hp[i]>-9) {
-					mTime+=120;
-					repaint();
-				}
-			}
-			if(mTime <= 0)
-			{
-
-				mTimer.stop();
-
-				int a = JOptionPane.showConfirmDialog(this, "È¹µæÄÚÀÎ :"+getCoin()+" °³", "°æ°úÃ¢", JOptionPane.YES_OPTION);
-
-				if(a==0) {
-					CrushCarV.clip.stop();
-					CrushCarV.frame.setVisible(false);
-					new WorkNetV();
-				}
-			}
-			repaint();
-		}
-	}
 
 	IColdFunction function = new IColdFunction();
 	//CrushCarV c = new CrushCarV();
@@ -93,14 +64,55 @@ public class CrushCarM extends JPanel implements KeyListener, ActionListener {
 	static Image background ;
 	int right=0;
 	int punch=0;
-	int cnt=0;	
+	int cnt=0;   
 	int punchs=0;
 	int[] hp= {50,50,50,50,50
 			,50,50,50,50,50
 			,50,50,50,50,50
 			,50,50,50,50,50
 			,50,50,50,50,50
-			,50,50,50,250,3000};
+			,50,50,50,250,50};
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		if(mTimer == arg0.getSource())
+		{
+			
+			mTime-=1;
+			System.out.println(mTime);
+			for(int i=0 ; i<hp.length; i+=2) {
+				if (hp[i]<0 && hp[i]>-9) {
+					mTime+=120;
+					
+				}
+				}
+			
+		}
+		if(mTime <= 0||hp[29]<=0){
+
+			mTimer.stop();
+			CrushCarV.clip.stop();
+			CrushCarV.frame.setVisible(false);
+			new CrushcarendV();
+
+
+
+		}
+//		if(hp[29]<=0 && mTimer==arg0.getSource() ){
+//			mTime =0;
+//
+//
+//			mTimer.stop();
+//			CrushCarV.clip.stop();
+//			CrushCarV.frame.setVisible(false);
+//			new CrushcarendV();
+//
+//
+//
+//		}
+		repaint();
+	}
+
 
 	public CrushCarM() {
 
@@ -414,9 +426,9 @@ public class CrushCarM extends JPanel implements KeyListener, ActionListener {
 																															repaint();
 																															g.setColor(Color.ORANGE);
 																															g.drawString("Å¬¸®¾îÇÏ¼Ì½À´Ï´Ù.", 300, 400);
-																															 setCoin(getCoin()+2);
-																															 new CrushcarendV();
-																															
+																															setCoin(2);
+
+
 																														}}}}}}}}}}}}}}}}}}}   }}}}}}}}}}
 
 
@@ -458,22 +470,22 @@ public class CrushCarM extends JPanel implements KeyListener, ActionListener {
 		if(manBasicPosition.x>=600&& manBasicPosition.x<860 && punch==1 &&right==1)
 		{g.drawImage(effect, manBasicPosition.x -150/ 2, 345, this  );
 
-		
+
 		hp[0]--;
 		for(int i=0 ; i<hp.length-1; i++) {
-    		
-			
-    		if(hp[i]<=0) {
-    			
-    			hp[i+1]--;
-    			
-    		}
-    	}
+
+
+			if(hp[i]<=0) {
+
+				hp[i+1]--;
+
+			}
+		}
 		}
 	}
 
 
-	
+
 	public void setCoin(int coin) {
 		this.coin = coin;
 	}

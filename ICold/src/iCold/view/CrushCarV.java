@@ -32,7 +32,9 @@ public class CrushCarV extends JFrame{
    //IColdFunction function = new IColdFunction();
    public static JFrame frame = new JFrame("Crush car");
    public static Clip clip;
+
    static AudioInputStream backmusic;
+
    public CrushCarV() {
       
       frame.setContentPane(new CrushCarM());
@@ -49,7 +51,9 @@ public class CrushCarV extends JFrame{
       
       try
       {
-          backmusic = AudioSystem.getAudioInputStream(new File("Sound\\sd3-306.wav"));
+
+    	  AudioInputStream backmusic = AudioSystem.getAudioInputStream(new File("Sound\\sd3-306.wav"));
+
 //       AudioInputStream punchSound = AudioSystem.getAudioInputStream(new File("Sound\\Å¸°ÝÀ½_Çª¾ï.wav"));
          clip = AudioSystem.getClip();
 //         clip.stop();
@@ -65,10 +69,4 @@ public class CrushCarV extends JFrame{
     
       
    }
-   public static void stop() {
-	 
-	   clip.stop();	
-	   clip.close();
-   }
-
 }
