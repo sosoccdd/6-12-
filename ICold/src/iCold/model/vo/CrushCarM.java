@@ -1,4 +1,4 @@
-package iCold.model.vo;
+/*package iCold.model.vo;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -967,4 +967,4 @@ public class CrushCarM extends JPanel implements KeyListener, ActionListener {
 	}
 >>>>>>> branch 'master' of https://github.com/sosoccdd/6-12-.git
 
-}
+}*/

@@ -1,4 +1,4 @@
-package iCold.view;
+/*package iCold.view;
 
 import java.awt.Dimension;
 import java.awt.Font;
@@ -62,3 +62,4 @@ public class CrushcarendV extends CrushCarV{
 		}
 
 }
+*/

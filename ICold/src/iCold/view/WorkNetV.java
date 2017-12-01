@@ -80,7 +80,7 @@ public class WorkNetV {
 			public void actionPerformed(ActionEvent arg0) {
 
 				jframe.setVisible(false);
-				new CrushCarV();
+			//	new CrushCarV();
 
 			}
 		});

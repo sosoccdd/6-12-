@@ -1,4 +1,4 @@
-package iCold.view;
+/*package iCold.view;
 
 <<<<<<< HEAD
 =======
@@ -88,3 +88,4 @@ public class CrushCarV extends JFrame{
 =======
 }
 >>>>>>> branch 'master' of https://github.com/sosoccdd/6-12-.git
+*/
