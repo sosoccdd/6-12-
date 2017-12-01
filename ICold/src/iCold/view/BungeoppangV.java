@@ -119,7 +119,6 @@ public class BungeoppangV extends JFrame{
 					time3[0] = new Timer();
 					time4[0] = new Timer();
 					TimerTask bnt1_time1 = new TimerTask() {
-
 						@Override
 						public void run() {
 							if(bnt[0].getIcon()==p2){
@@ -128,51 +127,40 @@ public class BungeoppangV extends JFrame{
 						}
 					};
 					TimerTask bnt1_time2 = new TimerTask() {
-
 						@Override
 						public void run() {
 							if(bnt[0].getIcon()==p3){
 								bnt[0].setIcon(p4);
 							}
-
 						}
 					};
 					TimerTask bnt1_time3 = new TimerTask() {
-
 						@Override
 						public void run() {
 							if(bnt[0].getIcon()==p4){
 								bnt[0].setIcon(p5);
 							}
-
 						}
 					};
 					TimerTask bnt1_time4 = new TimerTask() {
-
 						@Override
 						public void run() {
 							if(bnt[0].getIcon()==p5){
 								bnt[0].setIcon(p6);
 							}
-
 						}
 					};
 					time1[0].schedule(bnt1_time1, set_time);
 					time2[0].schedule(bnt1_time2, set_time*3);
 					time3[0].schedule(bnt1_time3, set_time*5);
 					time4[0].schedule(bnt1_time4, set_time*7);
-
-
 				}else if(bnt[0].getIcon() == p2||bnt[0].getIcon() == p3||bnt[0].getIcon() == p4||bnt[0].getIcon() == p6){
-
 					bnt[0].setIcon(p1);
-
 				}else if(bnt[0].getIcon() == p5){
 					bnt[0].setIcon(p1);
 					coin++;
 					lblNewLabel.setText(coin+" °³ ");
 				}
-
 			}
 		});
 		bnt[1].addActionListener(new ActionListener() {
