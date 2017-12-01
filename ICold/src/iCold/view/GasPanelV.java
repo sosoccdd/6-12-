@@ -15,7 +15,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class GasPanel extends JPanel{
+public class GasPanelV extends JPanel{
 	
 	//전달 받을 프레임과 패널, 사용할 라벨 선언
 	JFrame jr;
@@ -46,9 +46,9 @@ public class GasPanel extends JPanel{
 	ImageIcon view = new ImageIcon("image\\게임설명2.png");
 	ImageIcon icon1;
 	
-	public GasPanel(){}
+	public GasPanelV(){}
 
-	public GasPanel(JFrame jr){
+	public GasPanelV(JFrame jr){
 		
 		this.jr = jr;
 		//패널 백그라운드 이미지 생성

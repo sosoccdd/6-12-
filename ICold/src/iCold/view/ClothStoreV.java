@@ -71,11 +71,11 @@ public class ClothStoreV extends JFrame{
 		nickName.setSize(203, 50);
 
 		ClothStoreM clotharr[] = new ClothStoreM[5];
-		clotharr[0] = new ClothStoreM("편한옷", 1, '1');
-		clotharr[1] = new ClothStoreM("외출복", 2, '2');
-		clotharr[2] = new ClothStoreM("체크드레스", 3, '3');
-		clotharr[3] = new ClothStoreM("면접복장", 4, '4');
-		clotharr[4] = new ClothStoreM("상큼발랄", 5, '5');
+		clotharr[0] = new ClothStoreM("편한옷", 10, '1');
+		clotharr[1] = new ClothStoreM("외출복", 10, '2');
+		clotharr[2] = new ClothStoreM("체크드레스", 10, '3');
+		clotharr[3] = new ClothStoreM("면접복장", 10, '4');
+		clotharr[4] = new ClothStoreM("상큼발랄", 10, '5');
 
 		ImageIcon images[] = new ImageIcon[5];
 		images[0] = new ImageIcon("image\\옷1.png");

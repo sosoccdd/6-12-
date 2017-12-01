@@ -14,17 +14,17 @@ import javax.swing.JPanel;
 
 import iCold.model.dao.IColdFunction;
 
-public class GasEnd extends JFrame{
+public class GasEndV extends JFrame{
 	
 	JFrame jr;
 	JPanel chpanel;
 	int coincount;
 	int coin;
 	
-	public GasEnd(){
+	public GasEndV(){
 				
 		IColdFunction icf = new IColdFunction();
-		coincount = GasPanel.getCoincount();
+		coincount = GasPanelV.getCoincount();
 		
 		jr = new JFrame();
 		jr.setTitle("시간 종료");
