@@ -14,12 +14,12 @@ import javax.swing.JPanel;
 
 
 
-public class GasTimer extends Thread{
+public class GasTimerV extends Thread{
 
 	JFrame jr;
 	JPanel panel;
 	
-	public GasTimer(JFrame jr, JPanel panel){
+	public GasTimerV(JFrame jr, JPanel panel){
 		this.jr = jr;
 		this.panel = panel;
 	}
@@ -27,7 +27,7 @@ public class GasTimer extends Thread{
 	@Override
 	public void run(){		
 
-		GasPanel gp = new GasPanel();
+		GasPanelV gp = new GasPanelV();
 		
 		//스레드의 슬립을 사용하여 i 값 감소
 		for(int i = 100; i >= 0; i--){
@@ -40,7 +40,7 @@ public class GasTimer extends Thread{
 		}
 		//for문이 끝나면 프레임을 false, GasEnd실행
 		jr.setVisible(false);
-		new GasEnd();
+		new GasEndV();
 	}
 
 }

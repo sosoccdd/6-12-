@@ -38,7 +38,8 @@ public class ClothRoomV extends JComponent implements MouseListener, MouseMotion
 	ClothStoreM Store = new ClothStoreM();
 	IColdFunction function = new IColdFunction();
 	JLabel cloth[] = new JLabel[6];
-
+	int what=-1;
+	
 	class cloth1 extends JLabel{
 		
 		JLabel cloth1;
@@ -99,6 +100,7 @@ public class ClothRoomV extends JComponent implements MouseListener, MouseMotion
 		cloth[0].addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				what = 0;
 				reset();
 				cloth[0].setBounds(45, 210,150,350);
 			}
@@ -109,6 +111,7 @@ public class ClothRoomV extends JComponent implements MouseListener, MouseMotion
 		cloth[1].addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				what = 1;
 				reset();
 				cloth[1].setBounds(41, 220,150,350);
 			}
@@ -119,6 +122,7 @@ public class ClothRoomV extends JComponent implements MouseListener, MouseMotion
 		cloth[2].addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				what = 2;
 				reset();
 				cloth[2].setBounds(35, 224,150,350);
 			}
@@ -130,6 +134,7 @@ public class ClothRoomV extends JComponent implements MouseListener, MouseMotion
 		cloth[3].addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				what = 3;
 				reset();
 				cloth[3].setBounds(39, 225,150,300);
 			}
@@ -140,6 +145,7 @@ public class ClothRoomV extends JComponent implements MouseListener, MouseMotion
 		cloth[4].addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				what = 4;
 				reset();
 				cloth[4].setBounds(40, 210,150,350);
 			}
@@ -150,6 +156,7 @@ public class ClothRoomV extends JComponent implements MouseListener, MouseMotion
 		cloth[5].addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				what = 5;
 				reset();
 				cloth[5].setBounds(37, 157,150,442);
 			}
@@ -204,7 +211,7 @@ public class ClothRoomV extends JComponent implements MouseListener, MouseMotion
 					ar.add(i, cr[i]);
 				}
 
-				if (ar.contains('6')) {
+				/*if (ar.contains('6')) {
 					jframe.setVisible(false);
 					new EndingStoryV.EndingStoryV6();
 				}
@@ -237,8 +244,38 @@ public class ClothRoomV extends JComponent implements MouseListener, MouseMotion
 				else {
 					jframe.setVisible(false);
 					new ClothRoomV();
+				}*/
+				
+				if(what == 0) {
+					jframe.setVisible(false);
+					new EndingStoryV.EndingStoryV1();
 				}
-
+				
+				else if(what == 1) {
+					jframe.setVisible(false);
+					new EndingStoryV.EndingStoryV2();
+				}
+				
+				else if(what == 2) {
+					jframe.setVisible(false);
+					new EndingStoryV.EndingStoryV3();
+				}
+				
+				else if(what == 3) {
+					jframe.setVisible(false);
+					new EndingStoryV.EndingStoryV4();
+				}
+				
+				else if(what == 4) {
+					jframe.setVisible(false);
+					new EndingStoryV.EndingStoryV5();
+				}
+				
+				else if(what == 5) {
+					jframe.setVisible(false);
+					new EndingStoryV.EndingStoryV6();
+				}
+				
 			}
 
 		});
@@ -362,4 +399,5 @@ public class ClothRoomV extends JComponent implements MouseListener, MouseMotion
 		// TODO Auto-generated method stub
 		
 	}
+	
 }
