@@ -1,7 +1,5 @@
 package iCold.view;
 
-<<<<<<< HEAD
-=======
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Toolkit;
@@ -15,8 +13,6 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
->>>>>>> branch 'master' of https://github.com/sosoccdd/6-12-.git
-
 import java.io.File;
 
 
@@ -24,7 +20,7 @@ import java.io.File;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
-
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JFrame;
 
 import iCold.model.dao.IColdFunction;
@@ -32,21 +28,17 @@ import iCold.model.vo.CrushCarM;
 
 
 public class CrushCarV extends JFrame{
-<<<<<<< HEAD
+
    //IColdFunction function = new IColdFunction();
    public static JFrame frame = new JFrame("Crush car");
    public static Clip clip;
-=======
-	//IColdFunction function = new IColdFunction();
-	public static JFrame frame = new JFrame("Crush car");
-	public static Clip clip;
->>>>>>> branch 'master' of https://github.com/sosoccdd/6-12-.git
+   //static AudioInputStream backmusic;
    public CrushCarV() {
       
       frame.setContentPane(new CrushCarM());
       frame.pack();
       frame.add(CrushCarM.label);
-      
+     //a frame.add(CrushCarM.button);
       
       
       
@@ -55,12 +47,6 @@ public class CrushCarV extends JFrame{
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       frame.setVisible(true);
       
-<<<<<<< HEAD
-     
-=======
-
-      
->>>>>>> branch 'master' of https://github.com/sosoccdd/6-12-.git
       try
       {
          AudioInputStream backmusic = AudioSystem.getAudioInputStream(new File("Sound\\sd3-306.wav"));
@@ -76,11 +62,18 @@ public class CrushCarV extends JFrame{
       {
       } 
       
+    
       
    }
+//   public static void stop() {
+//      try {
+//      backmusic=AudioSystem.getAudioInputStream(new File("null")) ;
+//   } catch (UnsupportedAudioFileException | IOException e) {
+//      // TODO Auto-generated catch block
+//      e.printStackTrace();
+//   } 
+//      clip.stop();
+//      clip.close();
+//   }
 
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> branch 'master' of https://github.com/sosoccdd/6-12-.git
