@@ -6,6 +6,7 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.sound.sampled.AudioInputStream;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -16,7 +17,12 @@ import iCold.model.vo.CrushCarM;
 public class CrushcarendV extends CrushCarV{
 	IColdFunction function = new IColdFunction();
 	 public CrushcarendV(){
-			this.frame.setVisible(false);
+			
+		 
+		 
+		  CrushCarV.stop();
+		  
+		 this.frame.setVisible(false);
 			JFrame jframe2 = new JFrame("차 부수기 결과");
 			jframe2.setBounds(1000, 1000, 1000, 700);
 			jframe2.getContentPane().setLayout(null);

@@ -20,7 +20,7 @@ import java.io.File;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
-
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JFrame;
 
 import iCold.model.dao.IColdFunction;
@@ -32,7 +32,7 @@ public class CrushCarV extends JFrame{
    //IColdFunction function = new IColdFunction();
    public static JFrame frame = new JFrame("Crush car");
    public static Clip clip;
-
+   static AudioInputStream backmusic;
    public CrushCarV() {
       
       frame.setContentPane(new CrushCarM());
@@ -49,20 +49,26 @@ public class CrushCarV extends JFrame{
       
       try
       {
-         AudioInputStream backmusic = AudioSystem.getAudioInputStream(new File("Sound\\sd3-306.wav"));
+          backmusic = AudioSystem.getAudioInputStream(new File("Sound\\sd3-306.wav"));
 //       AudioInputStream punchSound = AudioSystem.getAudioInputStream(new File("Sound\\Å¸°ÝÀ½_Çª¾ï.wav"));
          clip = AudioSystem.getClip();
-         clip.stop();
+//         clip.stop();
          clip.open(backmusic);
 //   clip.open(punchSound);
-         clip.start();;
+         clip.start();
          
       }
       catch (Exception ex)
       {
       } 
       
+    
       
+   }
+   public static void stop() {
+	 
+	   clip.stop();	
+	   clip.close();
    }
 
 }
